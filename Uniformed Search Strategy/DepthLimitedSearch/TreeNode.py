@@ -56,6 +56,8 @@ def Tree_Search(problem, l):            # l is the depth limit for the Depth Lim
     Fringe = FL.Fringe_list(l)
     root = Node()           # dichiarazione root_node
     root.root(problem.initial_state)            # inizializzazione root node
+    if problem.goal_test(root.state):
+        return root
     Fringe.add(root)            # update fl w/ root_node
 
     while 1:
@@ -63,13 +65,14 @@ def Tree_Search(problem, l):            # l is the depth limit for the Depth Lim
             return 1            #il Tree Search è terminato e non è andato a buon fine
         else:
             selected_node = Fringe.pop()            # seleziona il prossimo nodo della fringe list
-            if problem.goal_test(selected_node.state):
-                return selected_node            # il Tree Search è terminato ed è andato a buon fine, viene restituito il nodo soluzione
+            print('DEPTH ', selected_node.depth)
 
             # se nodo non soddisfa il goal test
             new_fringe_nodes = Expand(problem, selected_node)           # effettua l'expand del nodo selezionato
 
             for node in new_fringe_nodes:
+                if problem.goal_test(node.state):
+                   return node          # il Tree Search è terminato ed è andato a buon fine, viene restituito il nodo soluzione
                 Fringe.add(node)            # aggiunge, uno alla volta, tutti i nodi restituiti dall'expand dell'ultimo nodo
 
 
@@ -108,9 +111,9 @@ def Print_Path(node, time_start):
         if flag :
             print('--- Path Finder ---'
                 '\nI found a valid solution!'
-                  '\nTime occured = ' , (timeit.default_timer() - time_start),
-                  '\nPath Cost ='   , node.path_cost,
-                  '\nTree Depth ='  , node.depth)
+                '\nTime occured = ' , (timeit.default_timer() - time_start),
+                '\nPath Cost ='   , node.path_cost,
+                '\nTree Depth ='  , node.depth)
 
             for index, x in enumerate(list):
                 if index != 0:
