@@ -36,39 +36,26 @@ class Problem:
             new_state = PS.State(mat)
 
             if action == 'Move TOP':
-                #print('FROM')
-                #PS.print_matrix(new_state.matrix, 3, 3)
-                #print('TO')
                 new_state.matrix[new_state.holeR][new_state.holeC] = state.matrix[new_state.holeR - 1][new_state.holeC]
                 new_state.matrix[new_state.holeR - 1][new_state.holeC] = 0
                 #PS.print_matrix(new_state.matrix,3,3)
                 new_state.holeR = new_state.holeR - 1
 
             if action == 'Move DOWN':
-                #print('FROM')
-                #PS.print_matrix(new_state.matrix, 3, 3)
-                #print('TO')
                 new_state.matrix[new_state.holeR][new_state.holeC] = new_state.matrix[new_state.holeR + 1][new_state.holeC]
                 new_state.matrix[new_state.holeR + 1][new_state.holeC] = 0
                 #PS.print_matrix(new_state.matrix,3,3)
                 new_state.holeR = new_state.holeR + 1
 
             if (action == 'Move LEFT'):
-                #print('FROM')
-                #PS.print_matrix(new_state.matrix, 3, 3)
-                #print('TO')
                 new_state.matrix[new_state.holeR][new_state.holeC] = new_state.matrix[new_state.holeR][new_state.holeC - 1]
                 new_state.matrix[new_state.holeR][new_state.holeC - 1] = 0
                 #PS.print_matrix(new_state.matrix,3,3)
                 new_state.holeC = new_state.holeC - 1
 
             if (action == 'Move RIGHT'):
-                #print('FROM')
-                #PS.print_matrix(new_state.matrix, 3, 3)
-                #print('TO')
                 new_state.matrix[new_state.holeR][new_state.holeC] = new_state.matrix[new_state.holeR][new_state.holeC + 1]
                 new_state.matrix[new_state.holeR][new_state.holeC + 1] = 0
-                #PS.print_matrix(new_state.matrix,3,3)
                 new_state.holeC = new_state.holeC + 1
 
             return new_state

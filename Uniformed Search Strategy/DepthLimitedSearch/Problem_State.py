@@ -1,5 +1,3 @@
-
-
 class State:
     def __init__(self, matrix):
         self.holeR = None
@@ -10,6 +8,7 @@ class State:
             print("Error: matrix in not well defined")
 
     def check_coerency(self):
+        # controllo che la matrice abbia tutti i numeri da 1 a 8, una sola volta
         list = [0, 1, 2, 3, 4, 5, 6, 7, 8]
 
         for row in range(3):

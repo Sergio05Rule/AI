@@ -32,6 +32,7 @@ def StateCompare (stateA, list):  # effettua un confronto tra un nodo e una list
             return 0
     return 1
 
+
 def Expand(problem, node): # restitusice una serie di nodi da inserire nella FL
 
     actions = problem.action(node.state) # lista di azioni possibili
@@ -44,18 +45,18 @@ def Expand(problem, node): # restitusice una serie di nodi da inserire nella FL
         tempN = Node()   # variabile temporanea di tipo nodo per inserire i nuovi nodi creati
         tempN.create(temp, node, node.depth, problem.path_cost(node,action), action) # assegna specifici valori alle variabili del nodo
         tempFL.append(tempN) # aggiunge il nodo alla lista dei nodi da inserire nella FL
-        flag = 1 # è avvenuta una effettiva espansione quindi faccio print
+        flag = 1 # è avvenuta una effettiva espansione quindi aggiungo il nodo alla lista closed
     if flag:
         problem.state_space.append(node.state)
 
     return tempFL
 
 
-def Tree_Search(problem, l):  # l is the depth limit for the Depth Limited Search Algorithm
+def Tree_Search(problem, l):            # l is the depth limit for the Depth Limited Search Algorithm
     Fringe = FL.Fringe_list(l)
-    root = Node()    # dichiarazione root_node
-    root.root(problem.initial_state)      # inizializzazione root node
-    Fringe.add(root)    # update fl w/ root_node
+    root = Node()           # dichiarazione root_node
+    root.root(problem.initial_state)            # inizializzazione root node
+    Fringe.add(root)            # update fl w/ root_node
 
     while 1:
         if len(Fringe.list) == 0:

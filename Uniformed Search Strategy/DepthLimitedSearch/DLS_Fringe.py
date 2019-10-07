@@ -6,6 +6,7 @@ class Fringe_list:
         self.limit = l
 
     def add(self, node):
+        # se il nodo ha profondità maggiore del valore limite non lo aggiungo alla fringe list
         if node.depth <= self.limit:
             self.list.insert(0, node)
         return 0
