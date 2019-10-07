@@ -41,11 +41,11 @@ def Expand(problem, node): # restitusice una serie di nodi da inserire nella FL
     for action in actions:
         temp = problem.result(node.state, action)
 
-        if StateCompare(temp, problem.state_space):
-            tempN = Node()   # variabile temporanea di tipo nodo per inserire i nuovi nodi creati
-            tempN.create(temp, node, node.depth, problem.path_cost(node,action), action) # assegna specifici valori alle variabili del nodo
-            tempFL.append(tempN) # aggiunge il nodo alla lista dei nodi da inserire nella FL
-            flag = 1 # è avvenuta una effettiva espansione quindi faccio print
+        #if StateCompare(temp, problem.state_space):
+        tempN = Node()   # variabile temporanea di tipo nodo per inserire i nuovi nodi creati
+        tempN.create(temp, node, node.depth, problem.path_cost(node,action), action) # assegna specifici valori alle variabili del nodo
+        tempFL.append(tempN) # aggiunge il nodo alla lista dei nodi da inserire nella FL
+        flag = 1 # è avvenuta una effettiva espansione quindi faccio print
     if flag:
         problem.state_space.append(node.state)
 
@@ -63,14 +63,11 @@ def Tree_Search(problem, l):  # l is the depth limit for the Depth Limited Searc
             return 1
         else:
             selected_node = Fringe.pop()
+            if problem.goal_test(selected_node.state):
+                return selected_node
 
-            if StateCompare(selected_node.state, problem.state_space):
-                #print(' --- Checking\tnode\t', '---')
-                if problem.goal_test(selected_node.state):
-                    return selected_node
+            new_fringe_nodes = Expand(problem, selected_node)
 
-                new_fringe_nodes = Expand(problem, selected_node)
-
-                for node in new_fringe_nodes:
-                    Fringe.add(node)
+            for node in new_fringe_nodes:
+                Fringe.add(node)
 

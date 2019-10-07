@@ -2,7 +2,6 @@ import TreeNode as TN
 import Problem as P
 import Problem_State as PS
 
-
 def Print_Path(node):
     list = []   # lista dove memorizzare il nome dei nodi da stampare a video
     temp = node # (node contiene informazioni utili sulla depth e path cost del GOAL node)
@@ -38,7 +37,7 @@ if __name__ == '__main__':
          [4, 6, 3],
          [0, 7, 8]]
     start = PS.State(r)
-    depth_limit = 37
+    depth_limit = 10
     problem = P.Problem(start)
 
     Print_Path(TN.Tree_Search(problem, depth_limit))  #run the search Alg
