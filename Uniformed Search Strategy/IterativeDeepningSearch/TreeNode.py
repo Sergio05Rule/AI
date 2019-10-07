@@ -60,7 +60,6 @@ def Tree_Search(problem, l):  # l is the depth limit for the Depth Limited Searc
 
     while 1:
         if len(Fringe.list) == 0:
-            print('-- FAILED TO FIND A SOLUTION IN DEPTH ', l)
             return 1
         else:
             selected_node = Fringe.pop()
@@ -71,20 +70,6 @@ def Tree_Search(problem, l):  # l is the depth limit for the Depth Limited Searc
 
             for node in new_fringe_nodes:
                 Fringe.add(node)
-
-def Iterative_Tree_Search(problem):
-
-    l = 0
-    solution = 1
-
-    while 1:
-        if solution == 1:
-            l += 1
-            solution = Tree_Search(problem, l)
-        else:
-            return solution
-
-
 
 
 def Print_Path(node):

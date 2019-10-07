@@ -10,9 +10,10 @@ if __name__ == '__main__':
          [4, 6, 3],
          [0, 7, 8]]
     start = PS.State(r)
+    depth_limit = 10
     problem = P.Problem(start)
 
-    TN.Print_Path(TN.Iterative_Tree_Search(problem))  #run dell'algoritmo di searching
+    TN.Print_Path(TN.Tree_Search(problem, depth_limit))  #run dell'algoritmo di searching
 
 
 
