@@ -1,6 +1,6 @@
 import DLS_Fringe as FL
 import Problem_State as PS
-import time
+import timeit
 
 #Library for Node Class
 
@@ -107,7 +107,7 @@ def Print_Path(node, time_start):
         if flag :
             print('--- Path Finder ---'
                 '\nI found a valid solution!'
-                  '\nTime occured =',time.process_time() - time_start,
+                  '\nTime occured = ' , (timeit.default_timer() - time_start),
                   '\nPath Cost ='   , node.path_cost,
                   '\nTree Depth ='  , node.depth)
 
