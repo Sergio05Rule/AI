@@ -55,7 +55,7 @@ if __name__ == '__main__':
     #Testing GIT
     #test commit git hub!
     #Push to upload
-    #fetch to download
+    #Pull to download (git pull does a git fetch followed by a git merge)
 
 
 
