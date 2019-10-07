@@ -52,7 +52,10 @@ if __name__ == '__main__':
 
     Print_Path(TN.Tree_Search(problem))  #run the search Alg
 
+    #Testing GIT
     #test commit git hub!
+    #Push to upload
+    #fetch to download
 
 
 
