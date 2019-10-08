@@ -40,16 +40,11 @@ def Expand(problem, node): # restitusice una serie di nodi da inserire nella FL
 
     for action in actions:
         temp = problem.result(node.state, action)
-
         tempN = Node()   # variabile temporanea di tipo nodo per inserire i nuovi nodi creati
         tempN.create(temp, node, node.depth, problem.path_cost(node,action), action) # assegna specifici valori alle variabili del nodo
         tempFL.append(tempN) # aggiunge il nodo alla lista dei nodi da inserire nella FL
-        flag = 1 # è avvenuta una effettiva espansione quindi faccio print
-    if flag:
-        problem.state_space.append(node.state)
 
     return tempFL
-
 
 def Tree_Search(problem, l):  # l is the depth limit for the Depth Limited Search Algorithm
     Fringe = FL.Fringe_list(l)
@@ -66,28 +61,13 @@ def Tree_Search(problem, l):  # l is the depth limit for the Depth Limited Searc
                 return selected_node            # il Tree Search è terminato ed è andato a buon fine, viene restituito il nodo soluzione
 
             # se nodo non soddisfa il goal test
+            if PS.NotinClosed(problem, selected_node)==1:
+                new_fringe_nodes = Expand(problem, selected_node)           # effettua l'expand del nodo selezionato
+                print('expanding', selected_node.state.matrix)
+                problem.closed.append((selected_node.state, selected_node.depth))
 
-            new_fringe_nodes = Expand(problem, selected_node)           # effettua l'expand del nodo selezionato
-            problem.closed.append((selected_node.state, selected_node.depth))
-
-            for node in new_fringe_nodes:
-                Fringe.add(node)            # aggiunge, uno alla volta, tutti i nodi restituiti dall'expand dell'ultimo nodo
-
-
-def Iterative_Tree_Search(problem):
-
-    l = 0
-    solution = 1            # valore di default per 'soluzione non trovata'
-
-    while 1:
-        if solution == 1:
-            l += 1
-            solution = Tree_Search(problem, l)
-        else:
-            return solution
-
-
-
+                for node in new_fringe_nodes:
+                    Fringe.add(node)            # aggiunge, uno alla volta, tutti i nodi restituiti dall'expand dell'ultimo nodo
 
 def Print_Path(node, time_start):
     list = []           # lista dove memorizzare il nome dei nodi da stampare a video

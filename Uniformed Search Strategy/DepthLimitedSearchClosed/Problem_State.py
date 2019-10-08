@@ -1,5 +1,4 @@
 
-
 class State:
     def __init__(self, matrix):
         self.holeR = None
@@ -26,7 +25,6 @@ class State:
         else:
             return 0
 
-
 def init_matrix(rows, cols):
     matrix = [[0 for x in range(cols)] for y in range(rows)]
     return matrix
@@ -39,11 +37,10 @@ def copy_matrix(inputM, rows, cols):
             outputM[row][col] = inputM[row][col]
     return outputM
 
-
 def print_matrix(matrix, rows, cols):
     [print(matrix[x]) for x in range(rows)]
 
-def compare_matrix(a,b):
+def compare_matrix(a,b):#restituisce 0 se le matrici sono diverse, 1 altrimenti
 
     for row in range(3):
         for col in range(3):
@@ -51,7 +48,9 @@ def compare_matrix(a,b):
                 return 0
     return 1
 
-
-
-
-
+def NotinClosed(problem, node): #restituisce 1 se lo stato non è stato già visitato (al netto di controlli sulla depth) è quindi bisogna aggiungerlo
+    NotVisited = 1
+    for tuple in problem.closed:
+        if (compare_matrix(node.state.matrix , tuple[0].matrix) == 1 and node.depth >= tuple[1]):
+            NotVisited = 0 #presente nei visited ma selected_node ha maggiore/uguale depth
+    return NotVisited
