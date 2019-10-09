@@ -1,4 +1,4 @@
-import UC_Fringe as FL
+import GR_Fringe as FL
 import Problem_State as PS
 import timeit
 
