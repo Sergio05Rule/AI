@@ -91,7 +91,7 @@ class Problem:
 
     def heuristic_func(self, state):
 
-        return self.check_position_heu(state)
+        return self.manhattan_distance(state)
 
     def check_position_heu(self, state):
 
@@ -105,3 +105,15 @@ class Problem:
                     well_positioned += 1
         return 9 - well_positioned
 
+    def manhattan_distance(self, state):
+        distance = 0
+        a = state.matrix
+        b = self.goal_state
+        for row in range(3):
+            for col in range(3):
+                element = b[row][col]
+                for r in range(3):
+                    for c in range(3):
+                        if element == a[r][c]:
+                            distance = distance + abs((r-row)) + abs((c-col))
+        return distance
