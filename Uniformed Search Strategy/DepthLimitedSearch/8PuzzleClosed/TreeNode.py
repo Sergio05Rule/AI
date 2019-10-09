@@ -36,7 +36,6 @@ def Expand(problem, node): # restitusice una serie di nodi da inserire nella FL
 
     actions = problem.action(node.state) # lista di azioni possibili
     tempFL = [] # lista temporanea dei nodi da aggiungere alla fringe list
-    flag = 0
 
     for action in actions:
         temp = problem.result(node.state, action)
@@ -63,7 +62,6 @@ def Tree_Search(problem, l):  # l is the depth limit for the Depth Limited Searc
             # se nodo non soddisfa il goal test
             if PS.NotinClosed(problem, selected_node)==1:
                 new_fringe_nodes = Expand(problem, selected_node)           # effettua l'expand del nodo selezionato
-                print('expanding', selected_node.state.matrix)
                 problem.closed.append((selected_node.state, selected_node.depth))
 
                 for node in new_fringe_nodes:
