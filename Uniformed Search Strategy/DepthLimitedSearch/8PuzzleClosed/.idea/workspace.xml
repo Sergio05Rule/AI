@@ -1,12 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3a7526b5-fb95-4a4a-bca3-2c92fab5210f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../8Puzzle/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../8Puzzle/.idea/DepthLimitedSearch.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../8Puzzle/.idea/DepthLimitedSearch.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../8Puzzle/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../8Puzzle/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="3a7526b5-fb95-4a4a-bca3-2c92fab5210f" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,8 +46,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/TreeNode.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="80">
-              <caret line="32" column="12" lean-forward="true" selection-start-line="32" selection-start-column="12" selection-end-line="32" selection-end-column="12" />
+            <state relative-caret-position="231">
+              <caret line="42" column="60" lean-forward="true" selection-start-line="42" selection-start-column="60" selection-end-line="42" selection-end-column="60" />
               <folding>
                 <element signature="e#0#23#0" expanded="true" />
               </folding>
@@ -210,7 +205,21 @@
       <option name="project" value="LOCAL" />
       <updated>1570609275675</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Non ho fatto niente">
+      <created>1570611058600</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1570611058600</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Non ho fatto niente">
+      <created>1570611070096</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1570611070096</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -238,7 +247,6 @@
     </layout>
   </component>
   <component name="VcsManagerConfiguration">
-    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="true" />
     <MESSAGE value="Add DLS CLOSED" />
     <MESSAGE value="Non ho fatto niente" />
     <option name="LAST_COMMIT_MESSAGE" value="Non ho fatto niente" />
@@ -279,8 +287,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/TreeNode.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="80">
-          <caret line="32" column="12" lean-forward="true" selection-start-line="32" selection-start-column="12" selection-end-line="32" selection-end-column="12" />
+        <state relative-caret-position="231">
+          <caret line="42" column="60" lean-forward="true" selection-start-line="42" selection-start-column="60" selection-end-line="42" selection-end-column="60" />
           <folding>
             <element signature="e#0#23#0" expanded="true" />
           </folding>
