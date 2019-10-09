@@ -70,6 +70,7 @@ def Tree_Search(problem, l):            # l is the depth limit for the Depth Lim
             # se nodo non soddisfa il goal test
             new_fringe_nodes = Expand(problem, selected_node)           # effettua l'expand del nodo selezionato
 
+            # Check sui nodi appena espansi o(b^d) più performante in caso di costo uniforme
             for node in new_fringe_nodes:
                 if problem.goal_test(node.state):
                    return node          # il Tree Search è terminato ed è andato a buon fine, viene restituito il nodo soluzione
@@ -87,9 +88,6 @@ def Iterative_Tree_Search(problem):
             solution = Tree_Search(problem, l)
         else:
             return solution
-
-
-
 
 def Print_Path(node, time_start):
     list = []           # lista dove memorizzare il nome dei nodi da stampare a video
