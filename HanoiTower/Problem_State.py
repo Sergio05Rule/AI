@@ -29,7 +29,7 @@ def bricks_on_top(tower):
 
     for col in range(len(tower[0])):
 
-        brick = 0
+        brick = (0, (None,None))
 
         for row in range(len(tower)):
 
@@ -39,18 +39,6 @@ def bricks_on_top(tower):
         tops.insert(col, brick)
 
     return tops
-
-def init_matrix(rows, cols):
-    matrix = [[0 for x in range(cols)] for y in range(rows)]
-    return matrix
-
-def copy_matrix(inputM, rows, cols):
-
-    outputM = init_matrix(rows, cols)
-    for row in range(rows):
-        for col in range(cols):
-            outputM[row][col] = inputM[row][col]
-    return outputM
 
 
 def print_matrix(matrix, rows, cols):
@@ -67,7 +55,7 @@ def compare_matrix(a,b):
 
 def compare_states(state1, state2):
 
-    return compare_matrix(state1.matrix, state2.matrix)
+    return compare_matrix(state1.tower, state2.tower)
 
 
 def NotinClosed(problem, node): #restituisce 1 se lo stato non è stato già visitato (al netto di controlli sulla depth) è quindi bisogna aggiungerlo

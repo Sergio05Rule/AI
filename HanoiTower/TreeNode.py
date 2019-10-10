@@ -1,4 +1,3 @@
-import AS_Fringe as FL
 import Problem_State as PS
 import timeit
 
@@ -48,7 +47,6 @@ def Expand(problem, node): # restitusice una serie di nodi da inserire nella FL
 
 def Tree_Search(problem):  # l is the depth limit for the Depth Limited Search Algorithm
 
-    problem.fringe = FL.Fringe_list()
     Fringe = problem.fringe
 
     # ---------------- NUOVO NODO CREATO ----------------
@@ -82,7 +80,6 @@ def Tree_Search(problem):  # l is the depth limit for the Depth Limited Search A
 
 def Graph_Search(problem):  # l is the depth limit for the Depth Limited Search Algorithm
 
-    problem.fringe = FL.Fringe_list()
     Fringe = problem.fringe
 
     # ---------------- NUOVO NODO CREATO ----------------

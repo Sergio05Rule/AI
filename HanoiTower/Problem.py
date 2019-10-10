@@ -1,5 +1,5 @@
 import Problem_State as PS
-import sys
+import BF_Fringe as FL
 
 # GRAPH PROBLEM
 
@@ -7,10 +7,10 @@ import sys
 class Problem:
     def __init__(self):
 
-        self.initial_state = PS.State([(1, 0, 0), (2, 0, 0), (3, 0, 0)])
-        self.goal_states = [ PS.State([(0, 1, 0), (0, 2, 0), (0, 3, 0)]), PS.State([(0, 0, 1), (0, 0, 2), (0, 0, 3)]) ]
+        self.initial_state = PS.State([[1, 0, 0], [2, 0, 0], [3, 0, 0]])
+        self.goal_state = PS.State([[0, 0, 1], [0, 0, 2], [0, 0, 3]])
         self.created_nodes = 0
-        self.fringe = []
+        self.fringe = FL.Fringe_list()
         self.closed = []
 
 
@@ -22,80 +22,47 @@ class Problem:
 
         tops = PS.bricks_on_top(tower)
 
-        for col in range(len(tower[0])):
+        for col in range(len(tower[0])):    # per ogni colonna
 
-            if tops[col][0] != 0:
+            if tops[col][0] != 0:           # controllo se c'è un brick da poter spostare
 
                 for other_col in range(len(tower[0])):
 
-                    if other_col != col:
+                    if other_col != col:     # controllo le altre colonne
 
-                        print('ECCOMI')
-
-                        if tops[other_col][0] > tops[col][0]:
+                        if tops[other_col][0] > tops[col][0] or tops[other_col][0] == 0:
 
                             action_list.append((col, other_col))
-
-                            print('ECCOMI')
-
-
 
         return action_list
 
     def result(self, state, action):
         # dato uno stato ed una azione restituisce il nuovo stato dopo aver eseguito l'azione
-        if (action in self.action(state)):
 
-            mat = PS.init_matrix(3,3)
-            mat = PS.copy_matrix(state.matrix,3,3)
-            new_state = PS.State(mat)
+        new_state = PS.State(state.tower)
 
-            if action == 'Move TOP':
-                #print('FROM')
-                #PS.print_matrix(new_state.matrix, 3, 3)
-                #print('TO')
-                new_state.matrix[new_state.holeR][new_state.holeC] = state.matrix[new_state.holeR - 1][new_state.holeC]
-                new_state.matrix[new_state.holeR - 1][new_state.holeC] = 0
-                #PS.print_matrix(new_state.matrix,3,3)
-                new_state.holeR = new_state.holeR - 1
+        column1 = action[0]
+        column2 = action[1]
 
-            if action == 'Move DOWN':
-                #print('FROM')
-                #PS.print_matrix(new_state.matrix, 3, 3)
-                #print('TO')
-                new_state.matrix[new_state.holeR][new_state.holeC] = new_state.matrix[new_state.holeR + 1][new_state.holeC]
-                new_state.matrix[new_state.holeR + 1][new_state.holeC] = 0
-                #PS.print_matrix(new_state.matrix,3,3)
-                new_state.holeR = new_state.holeR + 1
+        tops = PS.bricks_on_top(state.tower)
 
-            if (action == 'Move LEFT'):
-                #print('FROM')
-                #PS.print_matrix(new_state.matrix, 3, 3)
-                #print('TO')
-                new_state.matrix[new_state.holeR][new_state.holeC] = new_state.matrix[new_state.holeR][new_state.holeC - 1]
-                new_state.matrix[new_state.holeR][new_state.holeC - 1] = 0
-                #PS.print_matrix(new_state.matrix,3,3)
-                new_state.holeC = new_state.holeC - 1
+        brick = tops[column1][0]
+        pos1 = tops[column1][1]
 
-            if (action == 'Move RIGHT'):
-                #print('FROM')
-                #PS.print_matrix(new_state.matrix, 3, 3)
-                #print('TO')
-                new_state.matrix[new_state.holeR][new_state.holeC] = new_state.matrix[new_state.holeR][new_state.holeC + 1]
-                new_state.matrix[new_state.holeR][new_state.holeC + 1] = 0
-                #PS.print_matrix(new_state.matrix,3,3)
-                new_state.holeC = new_state.holeC + 1
+        pos2 = tops[column2][1]
 
-            return new_state
+        if (tops[column2][0] == 0):
+            pos2 = (0,column2)
 
-        else:
-            print('Action not permitted for this state: ', action)
-            sys.exit()
+        new_state.tower[pos2[0] - 1][pos2[1]] = brick
+        new_state.tower[pos1[0]][pos1[1]] = 0
+
+        return new_state
 
 
     def goal_test(self, state):
         # verifica se lo stato passato è il goal state
-        if state.matrix[0][0] == 1 and state.matrix[0][1] == 2 and state.matrix[0][2] == 3 and state.matrix[1][0] == 4 and state.matrix[1][1] == 5 and state.matrix[1][2] == 6 and state.matrix[2][0] == 7 and state.matrix[2][1] == 8 and state.matrix[2][2] == 0:
+        if PS.compare_matrix(state.tower, self.goal_state.tower):
             return 1
         else:
             return 0
@@ -110,15 +77,7 @@ class Problem:
 
     def check_position_heu(self, state):
 
-        well_positioned = 0
-        a = state.matrix
-        b = self.goal_state
-
-        for row in range(3):
-            for col in range(3):
-                if  (a[row][col] == b[row][col]):
-                    well_positioned += 1
-        return 9 - well_positioned
+        return 0
 
     def manhattan_distance(self, state):
         distance = 0
@@ -133,8 +92,3 @@ class Problem:
                             distance = distance + abs((r-row)) + abs((c-col))
         return distance
 
-
-problem = Problem()
-a = [(0, 0, 0), (0, 0, 0), (1, 2, 3)]
-
-print(problem.action( PS.State(a) ) )
