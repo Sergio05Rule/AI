@@ -2,8 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="40c9afb8-98d3-47ce-bb66-0a7b02eec096" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Uniformed Search Strategy/BiDirectional/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Uniformed Search Strategy/BiDirectional/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Uniformed Search Strategy/BiDirectional/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/AIML.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/AIML.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Informed Search Strategy/GreedySearch/Problem.py" beforeDir="false" afterPath="$PROJECT_DIR$/Informed Search Strategy/GreedySearch/Problem.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Uniformed Search Strategy/BiDirectional/.idea/BiDirectional.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Uniformed Search Strategy/BiDirectional/.idea/BiDirectional.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Uniformed Search Strategy/BiDirectional/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Uniformed Search Strategy/BiDirectional/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Uniformed Search Strategy/BiDirectional/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Uniformed Search Strategy/BiDirectional/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Uniformed Search Strategy/BiDirectional/Graph/Main.py" beforeDir="false" afterPath="$PROJECT_DIR$/Uniformed Search Strategy/BiDirectional/Graph/Main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Uniformed Search Strategy/BiDirectional/Graph/Problem.py" beforeDir="false" afterPath="$PROJECT_DIR$/Uniformed Search Strategy/BiDirectional/Graph/Problem.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Uniformed Search Strategy/BiDirectional/Graph/TreeNode.py" beforeDir="false" afterPath="$PROJECT_DIR$/Uniformed Search Strategy/BiDirectional/Graph/TreeNode.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -14,15 +24,22 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Informed Search Strategy/GreedySearch/UC_Fringe.py">
-          <provider selected="true" editor-type-id="text-editor" />
+        <entry file="file://$PROJECT_DIR$/Uniformed Search Strategy/BiDirectional/Graph/Main.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="60">
+              <caret line="5" selection-start-line="5" selection-end-line="5" />
+              <folding>
+                <element signature="e#0#17#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Informed Search Strategy/GreedySearch/Problem.py">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Uniformed Search Strategy/BiDirectional/Graph/TreeNode.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="297">
-              <caret line="114" selection-start-line="114" selection-end-line="114" />
+            <state relative-caret-position="-27">
+              <caret line="22" column="18" lean-forward="true" selection-start-line="22" selection-start-column="18" selection-end-line="22" selection-end-column="18" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -30,16 +47,26 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Informed Search Strategy/GreedySearch/Main.py">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Informed Search Strategy/AStarSearch/Main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="9" column="4" lean-forward="true" selection-start-line="9" selection-start-column="4" selection-end-line="11" selection-end-column="19" />
+            <state relative-caret-position="105">
+              <caret line="7" column="25" lean-forward="true" selection-start-line="7" selection-end-line="8" />
               <folding>
                 <element signature="e#0#21#0" expanded="true" />
               </folding>
             </state>
           </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Uniformed Search Strategy/BiDirectional/Graph/Graph.py">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Uniformed Search Strategy/BiDirectional/Graph/Problem_State.py">
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
     </leaf>
@@ -68,6 +95,8 @@
         <option value="$PROJECT_DIR$/Uniformed Search Strategy/DepthLimitedSearchClosed/TreeNode.py" />
         <option value="$PROJECT_DIR$/Uniformed Search Strategy/DepthLimitedSearch/8Puzzle/TreeNode.py" />
         <option value="$PROJECT_DIR$/Informed Search Strategy/GreedySearch/Problem.py" />
+        <option value="$PROJECT_DIR$/Uniformed Search Strategy/BiDirectional/Graph/Main.py" />
+        <option value="$PROJECT_DIR$/Uniformed Search Strategy/BiDirectional/Graph/TreeNode.py" />
       </list>
     </option>
   </component>
@@ -97,7 +126,25 @@
               <item name="AIML" type="b2602c69:ProjectViewProjectNode" />
               <item name="AIML" type="462c0819:PsiDirectoryNode" />
               <item name="Informed Search Strategy" type="462c0819:PsiDirectoryNode" />
-              <item name="GreedySearch" type="462c0819:PsiDirectoryNode" />
+              <item name="AStarSearch" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="AIML" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AIML" type="462c0819:PsiDirectoryNode" />
+              <item name="Uniformed Search Strategy" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="AIML" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AIML" type="462c0819:PsiDirectoryNode" />
+              <item name="Uniformed Search Strategy" type="462c0819:PsiDirectoryNode" />
+              <item name="BiDirectional" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="AIML" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AIML" type="462c0819:PsiDirectoryNode" />
+              <item name="Uniformed Search Strategy" type="462c0819:PsiDirectoryNode" />
+              <item name="BiDirectional" type="462c0819:PsiDirectoryNode" />
+              <item name="Graph" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -107,6 +154,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
@@ -320,14 +368,13 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1280" height="800" extended-state="0" />
-    <editor active="true" />
+    <frame x="0" y="23" width="1280" height="707" extended-state="0" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2536349" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2533757" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.3284553" />
       <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32876712" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
@@ -343,21 +390,21 @@
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
     </layout>
     <layout-to-restore>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.18189038" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2533757" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Inspection Results" order="0" weight="0.3284553" />
-      <window_info anchor="bottom" id="Message" order="1" />
-      <window_info anchor="bottom" id="Find" order="2" />
-      <window_info active="true" anchor="bottom" id="Run" order="3" visible="true" weight="0.43739837" />
-      <window_info anchor="bottom" id="Debug" order="4" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="5" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="6" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="7" />
-      <window_info anchor="bottom" id="Version Control" order="8" />
-      <window_info anchor="bottom" id="Terminal" order="9" />
-      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info anchor="bottom" id="Python Console" order="11" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32876712" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Version Control" order="7" />
+      <window_info anchor="bottom" id="Terminal" order="8" />
+      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
+      <window_info anchor="bottom" id="Python Console" order="10" />
+      <window_info anchor="bottom" id="Inspection Results" order="11" weight="0.3284553" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -496,25 +543,59 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Informed Search Strategy/GreedySearch/UC_Fringe.py">
-      <provider selected="true" editor-type-id="text-editor" />
+    <entry file="file://$PROJECT_DIR$/Informed Search Strategy/GreedySearch/UC_Fringe.py" />
+    <entry file="file://$PROJECT_DIR$/Informed Search Strategy/GreedySearch/Problem.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1157">
+          <caret line="97" column="10" lean-forward="true" selection-start-line="97" selection-start-column="10" selection-end-line="97" selection-end-column="10" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Informed Search Strategy/GreedySearch/Main.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
-          <caret line="9" column="4" lean-forward="true" selection-start-line="9" selection-start-column="4" selection-end-line="11" selection-end-column="19" />
+          <caret line="9" column="4" selection-start-line="9" selection-start-column="4" selection-end-line="11" selection-end-column="19" />
           <folding>
             <element signature="e#0#21#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Informed Search Strategy/GreedySearch/Problem.py">
+    <entry file="file://$PROJECT_DIR$/Uniformed Search Strategy/BiDirectional/Graph/Problem_State.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Uniformed Search Strategy/BiDirectional/Graph/Graph.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Uniformed Search Strategy/BiDirectional/Graph/Main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="297">
-          <caret line="114" selection-start-line="114" selection-end-line="114" />
+        <state relative-caret-position="60">
+          <caret line="5" selection-start-line="5" selection-end-line="5" />
+          <folding>
+            <element signature="e#0#17#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Uniformed Search Strategy/BiDirectional/Graph/TreeNode.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-27">
+          <caret line="22" column="18" lean-forward="true" selection-start-line="22" selection-start-column="18" selection-end-line="22" selection-end-column="18" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Informed Search Strategy/AStarSearch/Main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="25" lean-forward="true" selection-start-line="7" selection-end-line="8" />
+          <folding>
+            <element signature="e#0#21#0" expanded="true" />
           </folding>
         </state>
       </provider>

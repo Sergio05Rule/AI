@@ -5,6 +5,7 @@
       <option name="ignoredIdentifiers">
         <list>
           <option value="Problem_State" />
+          <option value="BF_Fringe" />
         </list>
       </option>
     </inspection_tool>

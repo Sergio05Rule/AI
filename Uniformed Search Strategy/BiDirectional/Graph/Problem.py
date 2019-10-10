@@ -12,6 +12,7 @@ class Problem:
         self.initial_state = initial_state
         self.goal_state = goal_state
         self.created_nodes = 0
+        self.fringe = None
 
     def action(self, state):
         # restitutisce la lista delle azioni possibili
