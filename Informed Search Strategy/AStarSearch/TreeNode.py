@@ -1,4 +1,4 @@
-import GR_Fringe as FL
+import AS_Fringe as FL
 import Problem_State as PS
 import timeit
 
@@ -9,7 +9,7 @@ class Node:
         self.state = None
         self.parent = None      # il nodo parent è fondamentale per poter ricostruire il path fino al root
         self.depth = None       # indica la profondità del nodo
-      check_position_heu  self.path_cost = None   # è il path cost dal root al nodo attuale
+        self.path_cost = None   # è il path cost dal root al nodo attuale
         self.action = None      # indica l'azione che è fatto evolvere l'enviroment nello stato contenuto in questo nodo. Serve a poter ripercorrere le azioni che portano dal root al nodo attuale.
         self.heuristic = None
 
@@ -25,7 +25,7 @@ class Node:
         self.depth = depth + 1
         self.path_cost = path_cost
         self.action = action
-        self.heuristic = problem.heuristic_func(state)
+        self.heuristic = problem.heuristic_func(state) + path_cost
 
 
 

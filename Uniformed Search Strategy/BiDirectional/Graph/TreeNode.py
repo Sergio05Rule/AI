@@ -1,4 +1,3 @@
-import GR_Fringe as FL
 import Problem_State as PS
 import timeit
 
@@ -9,15 +8,13 @@ class Node:
         self.state = None
         self.parent = None      # il nodo parent è fondamentale per poter ricostruire il path fino al root
         self.depth = None       # indica la profondità del nodo
-      check_position_heu  self.path_cost = None   # è il path cost dal root al nodo attuale
+        self.path_cost = None   # è il path cost dal root al nodo attuale
         self.action = None      # indica l'azione che è fatto evolvere l'enviroment nello stato contenuto in questo nodo. Serve a poter ripercorrere le azioni che portano dal root al nodo attuale.
-        self.heuristic = None
 
     def root(self, problem): # assegna ai parametri lo stato root_state e dei valori fissati per un nodo root
         self.state = problem.initial_state
         self.depth = 0
         self.path_cost = 0
-        self.heuristic = problem.heuristic_func(self.state)
 
     def create(self, problem, state, parent, depth, path_cost, action): # assegna i valori passati gli attributi di un nodo
         self.state = state
@@ -25,7 +22,6 @@ class Node:
         self.depth = depth + 1
         self.path_cost = path_cost
         self.action = action
-        self.heuristic = problem.heuristic_func(state)
 
 
 
@@ -46,36 +42,31 @@ def Expand(problem, node): # restitusice una serie di nodi da inserire nella FL
     return tempFL
 
 
-def Tree_Search(problem):  # l is the depth limit for the Depth Limited Search Algorithm
-    Fringe = FL.Fringe_list()
+def Tree_Search(problem, fringe):  # l is the depth limit for the Depth Limited Search Algorithm
+    Fringe = fringe
 
-    # ---------------- NUOVO NODO CREATO ----------------
-    root = Node()    # dichiarazione root_node
-    problem.created_nodes += 1
-    root.root(problem)      # inizializzazione root node
 
-    # ---------------- AGGIUNTA ROOT ALLA FRINGE ----------------
-    Fringe.add(root)    # update fl w/ root_node
+    # ---------------- CONTROLLO ASSENZA SOLUZIONE ----------------
+    if len(Fringe.list) == 0:
+        return (1,1)            #il Tree Search è terminato e non è andato a buon fine
+    else:
+        selected_node = Fringe.pop()            # seleziona il prossimo nodo della fringe list
 
-    while 1:
-        # ---------------- CONTROLLO ASSENZA SOLUZIONE ----------------
-        if len(Fringe.list) == 0:
-            return 1            #il Tree Search è terminato e non è andato a buon fine
-        else:
-            selected_node = Fringe.pop()            # seleziona il prossimo nodo della fringe list
+        # ---------------- GOAL TEST CHECKING ----------------
+        if problem.goal_test(selected_node.state):
+            return (2,selected_node)            # il Tree Search è terminato ed è andato a buon fine, viene restituito il nodo soluzione
 
-            # ---------------- GOAL TEST CHECKING ----------------
-            if problem.goal_test(selected_node.state):
-                return selected_node            # il Tree Search è terminato ed è andato a buon fine, viene restituito il nodo soluzione
+        # espando se il nodo non soddisfa il goal test
 
-            # espando se il nodo non soddisfa il goal test
+        # ---------------- EXPAND ----------------
+        new_fringe_nodes = Expand(problem, selected_node)           # effettua l'expand del nodo selezionato
+        print('EXPANDING: ', selected_node.state.id)
 
-            # ---------------- EXPAND ----------------
-            new_fringe_nodes = Expand(problem, selected_node)           # effettua l'expand del nodo selezionato
+        # ---------------- NUOVI NODI NELLA FRINGE ----------------
+        for node in new_fringe_nodes:
+            Fringe.add(node)            # aggiunge, uno alla volta, tutti i nodi restituiti dall'expand dell'ultimo nodo
 
-            # ---------------- NUOVI NODI NELLA FRINGE ----------------
-            for node in new_fringe_nodes:
-                Fringe.add(node)            # aggiunge, uno alla volta, tutti i nodi restituiti dall'expand dell'ultimo nodo
+        return (0,fringe)
 
 
 def Print_Path(node, time_start, problem):
@@ -105,6 +96,17 @@ def Print_Path(node, time_start, problem):
 
             for index, x in enumerate(list):
                 if index != 0:
-                    print('\t↓\n', x.action,'\n\t↓')
-                PS.print_matrix(x.state.matrix,3,3)
+                    print(' -> ', end='')
+                print(x.state.id, end='')
             return 0
+
+
+def compare_fringes(fringe1, fringe2):
+    list1 = fringe1.list
+    list2 = fringe2.list
+
+    for node1 in list1:
+        for node2 in list2:
+            if node1.state.id == node2.state.id:
+                return node1
+    return 0
