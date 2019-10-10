@@ -10,6 +10,8 @@ class Problem:
         self.initial_state = initial_state
         self.goal_state = [[1,2,3],[4,5,6],[7,8,0]]
         self.created_nodes = 0
+        self.fring = []
+        self.closed = []
 
 
     def action(self, state):

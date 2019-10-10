@@ -2,18 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="40c9afb8-98d3-47ce-bb66-0a7b02eec096" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Uniformed Search Strategy/BiDirectional/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Uniformed Search Strategy/BiDirectional/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Uniformed Search Strategy/BiDirectional/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/AIML.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/AIML.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Uniformed Search Strategy/BiDirectional/.idea/BiDirectional.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Uniformed Search Strategy/BiDirectional/.idea/BiDirectional.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Uniformed Search Strategy/BiDirectional/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Uniformed Search Strategy/BiDirectional/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Informed Search Strategy/AStarSearch/Main.py" beforeDir="false" afterPath="$PROJECT_DIR$/Informed Search Strategy/AStarSearch/Main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Informed Search Strategy/AStarSearch/Problem.py" beforeDir="false" afterPath="$PROJECT_DIR$/Informed Search Strategy/AStarSearch/Problem.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Informed Search Strategy/AStarSearch/Problem_State.py" beforeDir="false" afterPath="$PROJECT_DIR$/Informed Search Strategy/AStarSearch/Problem_State.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Informed Search Strategy/AStarSearch/TreeNode.py" beforeDir="false" afterPath="$PROJECT_DIR$/Informed Search Strategy/AStarSearch/TreeNode.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Uniformed Search Strategy/BiDirectional/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Uniformed Search Strategy/BiDirectional/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Uniformed Search Strategy/BiDirectional/Graph/Main.py" beforeDir="false" afterPath="$PROJECT_DIR$/Uniformed Search Strategy/BiDirectional/Graph/Main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Uniformed Search Strategy/BiDirectional/Graph/Problem.py" beforeDir="false" afterPath="$PROJECT_DIR$/Uniformed Search Strategy/BiDirectional/Graph/Problem.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Uniformed Search Strategy/BiDirectional/Graph/TreeNode.py" beforeDir="false" afterPath="$PROJECT_DIR$/Uniformed Search Strategy/BiDirectional/Graph/TreeNode.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -24,25 +17,31 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Uniformed Search Strategy/BiDirectional/Graph/Main.py">
+        <entry file="file://$PROJECT_DIR$/Informed Search Strategy/AStarSearch/TreeNode.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="5" selection-start-line="5" selection-end-line="5" />
+            <state relative-caret-position="-76">
+              <caret line="115" column="50" selection-start-line="115" selection-start-column="39" selection-end-line="115" selection-end-column="50" />
               <folding>
-                <element signature="e#0#17#0" expanded="true" />
+                <element signature="e#0#22#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Uniformed Search Strategy/BiDirectional/Graph/TreeNode.py">
+        <entry file="file://$PROJECT_DIR$/Uniformed Search Strategy/DepthLimitedSearch/GraphClosed/Problem_State.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-27">
-              <caret line="22" column="18" lean-forward="true" selection-start-line="22" selection-start-column="18" selection-end-line="22" selection-end-column="18" />
-              <folding>
-                <element signature="e#0#26#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="165">
+              <caret line="11" column="21" lean-forward="true" selection-start-line="11" selection-start-column="21" selection-end-line="11" selection-end-column="21" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Informed Search Strategy/AStarSearch/Problem_State.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="232">
+              <caret line="66" column="21" lean-forward="true" selection-start-line="66" selection-start-column="21" selection-end-line="66" selection-end-column="21" />
             </state>
           </provider>
         </entry>
@@ -50,8 +49,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Informed Search Strategy/AStarSearch/Main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="7" column="25" lean-forward="true" selection-start-line="7" selection-end-line="8" />
+            <state relative-caret-position="225">
+              <caret line="15" column="26" selection-start-line="15" selection-start-column="26" selection-end-line="15" selection-end-column="26" />
               <folding>
                 <element signature="e#0#21#0" expanded="true" />
               </folding>
@@ -60,12 +59,19 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Uniformed Search Strategy/BiDirectional/Graph/Graph.py">
-          <provider selected="true" editor-type-id="text-editor" />
+        <entry file="file://$PROJECT_DIR$/Informed Search Strategy/AStarSearch/Problem.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="225">
+              <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
+              <folding>
+                <element signature="e#0#26#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Uniformed Search Strategy/BiDirectional/Graph/Problem_State.py">
+        <entry file="file://$PROJECT_DIR$/Informed Search Strategy/AStarSearch/AS_Fringe.py">
           <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
@@ -97,6 +103,10 @@
         <option value="$PROJECT_DIR$/Informed Search Strategy/GreedySearch/Problem.py" />
         <option value="$PROJECT_DIR$/Uniformed Search Strategy/BiDirectional/Graph/Main.py" />
         <option value="$PROJECT_DIR$/Uniformed Search Strategy/BiDirectional/Graph/TreeNode.py" />
+        <option value="$PROJECT_DIR$/Informed Search Strategy/AStarSearch/Problem.py" />
+        <option value="$PROJECT_DIR$/Informed Search Strategy/AStarSearch/TreeNode.py" />
+        <option value="$PROJECT_DIR$/Informed Search Strategy/AStarSearch/Problem_State.py" />
+        <option value="$PROJECT_DIR$/Informed Search Strategy/AStarSearch/Main.py" />
       </list>
     </option>
   </component>
@@ -137,14 +147,14 @@
               <item name="AIML" type="b2602c69:ProjectViewProjectNode" />
               <item name="AIML" type="462c0819:PsiDirectoryNode" />
               <item name="Uniformed Search Strategy" type="462c0819:PsiDirectoryNode" />
-              <item name="BiDirectional" type="462c0819:PsiDirectoryNode" />
+              <item name="DepthLimitedSearch" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="AIML" type="b2602c69:ProjectViewProjectNode" />
               <item name="AIML" type="462c0819:PsiDirectoryNode" />
               <item name="Uniformed Search Strategy" type="462c0819:PsiDirectoryNode" />
-              <item name="BiDirectional" type="462c0819:PsiDirectoryNode" />
-              <item name="Graph" type="462c0819:PsiDirectoryNode" />
+              <item name="DepthLimitedSearch" type="462c0819:PsiDirectoryNode" />
+              <item name="GraphClosed" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -174,7 +184,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.Main (1)">
+  <component name="RunManager" selected="Python.Main">
     <configuration name="Main (1)" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="AIML" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -209,6 +219,27 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Uniformed Search Strategy/DepthLimitedSearchClosed/Main.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Main" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="AIML" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Informed Search Strategy/AStarSearch" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Informed Search Strategy/AStarSearch/Main.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -259,34 +290,13 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="Problem_State" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="AIML" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Uniformed Search Strategy/8Tiles" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Uniformed Search Strategy/8Tiles/Problem_State.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.Main" />
         <item itemvalue="Python.Main (1)" />
         <item itemvalue="Python.Problem" />
         <item itemvalue="Python.Main (2)" />
         <item itemvalue="Python.Problem_State (1)" />
-        <item itemvalue="Python.Problem_State" />
       </list>
     </recent_temporary>
   </component>
@@ -370,12 +380,12 @@
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1280" height="707" extended-state="0" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2533757" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2533757" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3284553" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32876712" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32876712" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -515,15 +525,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Uniformed Search Strategy/DepthLimitedSearch/GraphClosed/TreeNode.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-400">
-          <folding>
-            <element signature="e#0#23#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Uniformed Search Strategy/IterativeDeepningSearch/8Puzzle/TreeNode.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-587">
@@ -570,16 +571,6 @@
     <entry file="file://$PROJECT_DIR$/Uniformed Search Strategy/BiDirectional/Graph/Graph.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/Uniformed Search Strategy/BiDirectional/Graph/Main.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="5" selection-start-line="5" selection-end-line="5" />
-          <folding>
-            <element signature="e#0#17#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Uniformed Search Strategy/BiDirectional/Graph/TreeNode.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-27">
@@ -590,10 +581,67 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Uniformed Search Strategy/BiDirectional/Graph/Main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="5" selection-start-line="5" selection-end-line="5" />
+          <folding>
+            <element signature="e#0#17#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Uniformed Search Strategy/DepthLimitedSearch/GraphClosed/TreeNode.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="51" column="32" selection-start-line="51" selection-start-column="23" selection-end-line="51" selection-end-column="32" />
+          <folding>
+            <element signature="e#0#23#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Uniformed Search Strategy/DepthLimitedSearch/GraphClosed/Problem_State.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="21" lean-forward="true" selection-start-line="11" selection-start-column="21" selection-end-line="11" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Informed Search Strategy/AStarSearch/Problem.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Informed Search Strategy/AStarSearch/AS_Fringe.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Informed Search Strategy/AStarSearch/TreeNode.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-76">
+          <caret line="115" column="50" selection-start-line="115" selection-start-column="39" selection-end-line="115" selection-end-column="50" />
+          <folding>
+            <element signature="e#0#22#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Informed Search Strategy/AStarSearch/Problem_State.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="232">
+          <caret line="66" column="21" lean-forward="true" selection-start-line="66" selection-start-column="21" selection-end-line="66" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Informed Search Strategy/AStarSearch/Main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="25" lean-forward="true" selection-start-line="7" selection-end-line="8" />
+        <state relative-caret-position="225">
+          <caret line="15" column="26" selection-start-line="15" selection-start-column="26" selection-end-line="15" selection-end-column="26" />
           <folding>
             <element signature="e#0#21#0" expanded="true" />
           </folding>

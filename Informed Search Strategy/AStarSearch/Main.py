@@ -13,7 +13,7 @@ if __name__ == '__main__':
     start = PS.State(r)
     problem = P.Problem(start)
 
-    TN.Print_Path(TN.Tree_Search(problem), start_time, problem)  #run dell'algoritmo di searching
+    TN.Print_Path(TN.Graph_Search(problem), start_time, problem)  #run dell'algoritmo di searching
 
 
 

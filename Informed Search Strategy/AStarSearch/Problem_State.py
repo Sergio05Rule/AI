@@ -52,5 +52,17 @@ def compare_matrix(a,b):
     return 1
 
 
+def compare_states(state1, state2):
 
+    return compare_matrix(state1.matrix, state2.matrix)
+
+
+def NotinClosed(problem, node): #restituisce 1 se lo stato non è stato già visitato (al netto di controlli sulla depth) è quindi bisogna aggiungerlo
+
+    NotVisited = 1
+    for state in problem.closed:
+        if compare_states(state, node.state):
+            NotVisited = 0 #presente nei visited ma selected_node ha maggiore/uguale depth
+
+    return NotVisited
 
