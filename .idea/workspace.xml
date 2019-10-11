@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="40c9afb8-98d3-47ce-bb66-0a7b02eec096" name="Default Changelist" comment="">
+    <list default="true" id="40c9afb8-98d3-47ce-bb66-0a7b02eec096" name="Default Changelist" comment="Challenge Rep">
       <change beforePath="$PROJECT_DIR$/Informed Search Strategy/AStarSearch/Main.py" beforeDir="false" afterPath="$PROJECT_DIR$/Informed Search Strategy/AStarSearch/Main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Informed Search Strategy/AStarSearch/Problem.py" beforeDir="false" afterPath="$PROJECT_DIR$/Informed Search Strategy/AStarSearch/Problem.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Informed Search Strategy/AStarSearch/Problem_State.py" beforeDir="false" afterPath="$PROJECT_DIR$/Informed Search Strategy/AStarSearch/Problem_State.py" afterDir="false" />
@@ -16,41 +16,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Informed Search Strategy/AStarSearch/TreeNode.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-76">
-              <caret line="115" column="50" selection-start-line="115" selection-start-column="39" selection-end-line="115" selection-end-column="50" />
-              <folding>
-                <element signature="e#0#22#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Uniformed Search Strategy/DepthLimitedSearch/GraphClosed/Problem_State.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="11" column="21" lean-forward="true" selection-start-line="11" selection-start-column="21" selection-end-line="11" selection-end-column="21" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Informed Search Strategy/AStarSearch/Problem_State.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="232">
-              <caret line="66" column="21" lean-forward="true" selection-start-line="66" selection-start-column="21" selection-end-line="66" selection-end-column="21" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Informed Search Strategy/AStarSearch/Main.py">
+        <entry file="file://$PROJECT_DIR$/Challenge/Main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="15" column="26" selection-start-line="15" selection-start-column="26" selection-end-line="15" selection-end-column="26" />
+            <state>
               <folding>
                 <element signature="e#0#21#0" expanded="true" />
               </folding>
@@ -59,10 +28,9 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Informed Search Strategy/AStarSearch/Problem.py">
+        <entry file="file://$PROJECT_DIR$/Challenge/TreeNode.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
+            <state>
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -71,7 +39,23 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Informed Search Strategy/AStarSearch/AS_Fringe.py">
+        <entry file="file://$PROJECT_DIR$/Challenge/Problem.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <folding>
+                <element signature="e#0#26#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Challenge/Problem_State.py">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Challenge/Graph.py">
           <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
@@ -110,7 +94,7 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds">
+  <component name="ProjectFrameBounds" fullScreen="true">
     <option name="y" value="23" />
     <option name="width" value="1280" />
     <option name="height" value="707" />
@@ -120,6 +104,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -130,42 +115,17 @@
             <path>
               <item name="AIML" type="b2602c69:ProjectViewProjectNode" />
               <item name="AIML" type="462c0819:PsiDirectoryNode" />
-              <item name="Informed Search Strategy" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="AIML" type="b2602c69:ProjectViewProjectNode" />
-              <item name="AIML" type="462c0819:PsiDirectoryNode" />
-              <item name="Informed Search Strategy" type="462c0819:PsiDirectoryNode" />
-              <item name="AStarSearch" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="AIML" type="b2602c69:ProjectViewProjectNode" />
-              <item name="AIML" type="462c0819:PsiDirectoryNode" />
-              <item name="Uniformed Search Strategy" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="AIML" type="b2602c69:ProjectViewProjectNode" />
-              <item name="AIML" type="462c0819:PsiDirectoryNode" />
-              <item name="Uniformed Search Strategy" type="462c0819:PsiDirectoryNode" />
-              <item name="DepthLimitedSearch" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="AIML" type="b2602c69:ProjectViewProjectNode" />
-              <item name="AIML" type="462c0819:PsiDirectoryNode" />
-              <item name="Uniformed Search Strategy" type="462c0819:PsiDirectoryNode" />
-              <item name="DepthLimitedSearch" type="462c0819:PsiDirectoryNode" />
-              <item name="GraphClosed" type="462c0819:PsiDirectoryNode" />
+              <item name="Challenge" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+    <property name="settings.editor.selected.configurable" value="vcs.Git" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -184,7 +144,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.Main">
+  <component name="RunManager" selected="Python.Main (3)">
     <configuration name="Main (1)" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="AIML" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -219,6 +179,27 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Uniformed Search Strategy/DepthLimitedSearchClosed/Main.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Main (3)" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="AIML" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Challenge" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Challenge/Main.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -269,34 +250,13 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="Problem_State (1)" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="AIML" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Uniformed Search Strategy/DepthLimitedSearchClosed" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Uniformed Search Strategy/DepthLimitedSearchClosed/Problem_State.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.Main (3)" />
         <item itemvalue="Python.Main" />
         <item itemvalue="Python.Main (1)" />
         <item itemvalue="Python.Problem" />
         <item itemvalue="Python.Main (2)" />
-        <item itemvalue="Python.Problem_State (1)" />
       </list>
     </recent_temporary>
   </component>
@@ -378,9 +338,9 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1280" height="707" extended-state="0" />
+    <frame x="0" y="0" width="1280" height="800" extended-state="0" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2533757" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25767368" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -391,7 +351,7 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info anchor="bottom" id="Terminal" order="8" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="8" visible="true" weight="0.32876712" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
       <window_info anchor="bottom" id="Python Console" order="10" />
       <window_info anchor="bottom" id="Inspection Results" order="11" weight="0.3284553" />
@@ -427,7 +387,8 @@
     <MESSAGE value="Migliorata gestione tempo" />
     <MESSAGE value="Migliorati i commenti" />
     <MESSAGE value="Check spostato dopo l'espansione" />
-    <option name="LAST_COMMIT_MESSAGE" value="Check spostato dopo l'espansione" />
+    <MESSAGE value="Challenge Rep" />
+    <option name="LAST_COMMIT_MESSAGE" value="Challenge Rep" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/Uniformed Search Strategy/IterativeDeepningSearch/.idea/misc.xml" />
@@ -642,6 +603,39 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="225">
           <caret line="15" column="26" selection-start-line="15" selection-start-column="26" selection-end-line="15" selection-end-column="26" />
+          <folding>
+            <element signature="e#0#21#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Challenge/Problem.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Challenge/Problem_State.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Challenge/Graph.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Challenge/TreeNode.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Challenge/Main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
           <folding>
             <element signature="e#0#21#0" expanded="true" />
           </folding>
