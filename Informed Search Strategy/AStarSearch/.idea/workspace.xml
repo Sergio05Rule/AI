@@ -2,7 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="10d98f30-88bd-423d-b16b-02fece225e25" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../GreedySearch/TreeNode.py" beforeDir="false" afterPath="$PROJECT_DIR$/../GreedySearch/TreeNode.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../HanoiTower/DF_Fringe.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../HanoiTower/DLS_Fringe.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../HanoiTower/GR_Fringe.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../HanoiTower/UC_Fringe.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../HanoiTower/AS_Fringe.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../HanoiTower/AS_Fringe.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../HanoiTower/BF_Fringe.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../HanoiTower/BF_Fringe.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../HanoiTower/Main.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../HanoiTower/Main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../HanoiTower/Problem.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../HanoiTower/Problem.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../HanoiTower/Problem_State.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../HanoiTower/Problem_State.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../HanoiTower/TreeNode.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../HanoiTower/TreeNode.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AS_Fringe.py" beforeDir="false" afterPath="$PROJECT_DIR$/AS_Fringe.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TreeNode.py" beforeDir="false" afterPath="$PROJECT_DIR$/TreeNode.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -27,8 +39,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Problem.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1380">
-              <caret line="93" column="38" selection-start-line="93" selection-start-column="38" selection-end-line="93" selection-end-column="38" />
+            <state relative-caret-position="1305">
+              <caret line="88" selection-start-line="88" selection-end-line="88" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -39,8 +51,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Problem_State.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="600">
-              <caret line="40" selection-start-line="40" selection-end-line="40" />
+            <state relative-caret-position="58">
+              <caret line="29" selection-start-line="29" selection-end-line="31" selection-end-column="17" />
             </state>
           </provider>
         </entry>
@@ -48,8 +60,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/TreeNode.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
+            <state relative-caret-position="183">
+              <caret line="48" column="23" selection-start-line="48" selection-start-column="23" selection-end-line="48" selection-end-column="23" />
               <folding>
                 <element signature="e#0#22#0" expanded="true" />
               </folding>
@@ -60,8 +72,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/AS_Fringe.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="345">
-              <caret line="23" selection-start-line="23" selection-end-line="23" />
+            <state relative-caret-position="480">
+              <caret line="32" lean-forward="true" selection-start-line="32" selection-end-line="32" />
             </state>
           </provider>
         </entry>
@@ -71,6 +83,7 @@
   <component name="FindInProjectRecents">
     <findStrings>
       <find>compare_matrix</find>
+      <find>heuristic</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -83,6 +96,7 @@
         <option value="$PROJECT_DIR$/Main.py" />
         <option value="$PROJECT_DIR$/UC_Fringe.py" />
         <option value="$PROJECT_DIR$/Problem.py" />
+        <option value="$PROJECT_DIR$/AS_Fringe.py" />
         <option value="$PROJECT_DIR$/TreeNode.py" />
       </list>
     </option>
@@ -204,7 +218,7 @@
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.3203252" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.19674797" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -236,8 +250,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Problem.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1380">
-          <caret line="93" column="38" selection-start-line="93" selection-start-column="38" selection-end-line="93" selection-end-column="38" />
+        <state relative-caret-position="1305">
+          <caret line="88" selection-start-line="88" selection-end-line="88" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>
@@ -246,22 +260,22 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Problem_State.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="600">
-          <caret line="40" selection-start-line="40" selection-end-line="40" />
+        <state relative-caret-position="58">
+          <caret line="29" selection-start-line="29" selection-end-line="31" selection-end-column="17" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/AS_Fringe.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="23" selection-start-line="23" selection-end-line="23" />
+        <state relative-caret-position="480">
+          <caret line="32" lean-forward="true" selection-start-line="32" selection-end-line="32" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/TreeNode.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
+        <state relative-caret-position="183">
+          <caret line="48" column="23" selection-start-line="48" selection-start-column="23" selection-end-line="48" selection-end-column="23" />
           <folding>
             <element signature="e#0#22#0" expanded="true" />
           </folding>

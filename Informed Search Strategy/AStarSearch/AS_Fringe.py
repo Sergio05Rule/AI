@@ -2,7 +2,10 @@ class Fringe_list:
     def __init__(self):
         self.list = []
 
-    def add(self, node):
+    def add(self, node, problem):
+
+        node.heuristic = problem.heuristic_func(node.state) + node.path_cost
+
         if len(self.list) < 1: # Primo in problem,serimento è sicuramente all'indice 0
             self.list.insert(0,node)
             return 1

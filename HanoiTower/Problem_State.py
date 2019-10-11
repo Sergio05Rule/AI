@@ -40,6 +40,18 @@ def bricks_on_top(tower):
 
     return tops
 
+def init_matrix(rows, cols):
+    matrix = [[0 for x in range(cols)] for y in range(rows)]
+    return matrix
+
+def copy_matrix(inputM, rows, cols):
+
+    outputM = init_matrix(rows, cols)
+    for row in range(rows):
+        for col in range(cols):
+            outputM[row][col] = inputM[row][col]
+    return outputM
+
 
 def print_matrix(matrix, rows, cols):
     [print(matrix[x]) for x in range(rows)]

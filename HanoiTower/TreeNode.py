@@ -16,7 +16,7 @@ class Node:
         self.state = problem.initial_state
         self.depth = 0
         self.path_cost = 0
-        self.heuristic = problem.heuristic_func(self.state)
+        self.heuristic = None
 
     def create(self, problem, state, parent, depth, path_cost, action): # assegna i valori passati gli attributi di un nodo
         self.state = state
@@ -24,7 +24,7 @@ class Node:
         self.depth = depth + 1
         self.path_cost = path_cost
         self.action = action
-        self.heuristic = problem.heuristic_func(state) + path_cost
+        self.heuristic = None
 
 
 
@@ -32,6 +32,7 @@ def Expand(problem, node): # restitusice una serie di nodi da inserire nella FL
 
     actions = problem.action(node.state) # lista di azioni possibili
     tempFL = [] # lista temporanea dei nodi da aggiungere alla fringe list
+
 
     for action in actions:
         temp = problem.result(node.state, action)
@@ -44,6 +45,7 @@ def Expand(problem, node): # restitusice una serie di nodi da inserire nella FL
 
     return tempFL
 
+def Tree
 
 def Tree_Search(problem):  # l is the depth limit for the Depth Limited Search Algorithm
 
@@ -56,6 +58,7 @@ def Tree_Search(problem):  # l is the depth limit for the Depth Limited Search A
 
     # ---------------- AGGIUNTA ROOT ALLA FRINGE ----------------
     Fringe.add(root)    # update fl w/ root_node
+    print('aggiunto nodo root alla fringe ', root.state.tower)
 
     while 1:
         # ---------------- CONTROLLO ASSENZA SOLUZIONE ----------------
@@ -63,15 +66,22 @@ def Tree_Search(problem):  # l is the depth limit for the Depth Limited Search A
             return 1            #il Tree Search è terminato e non è andato a buon fine
         else:
             selected_node = Fringe.pop()            # seleziona il prossimo nodo della fringe list
+            print('analizzo nodo: ', selected_node.state.tower)
 
+            print('---------------- GOAL TEST CHECKING ----------------')
             # ---------------- GOAL TEST CHECKING ----------------
             if problem.goal_test(selected_node.state):
                 return selected_node            # il Tree Search è terminato ed è andato a buon fine, viene restituito il nodo soluzione
 
             # espando se il nodo non soddisfa il goal test
 
+            print('---------------- EXPAND ----------------')
             # ---------------- EXPAND ----------------
             new_fringe_nodes = Expand(problem, selected_node)           # effettua l'expand del nodo selezionato
+
+            for x in new_fringe_nodes:
+
+                print(x.state.tower)
 
             # ---------------- NUOVI NODI NELLA FRINGE ----------------
             for node in new_fringe_nodes:
@@ -88,7 +98,7 @@ def Graph_Search(problem):  # l is the depth limit for the Depth Limited Search 
     root.root(problem)      # inizializzazione root node
 
     # ---------------- AGGIUNTA ROOT ALLA FRINGE ----------------
-    Fringe.add(root)    # update fl w/ root_node
+    Fringe.add(root, problem)    # update fl w/ root_node
 
     while 1:
         # ---------------- CONTROLLO ASSENZA SOLUZIONE ----------------
@@ -114,7 +124,7 @@ def Graph_Search(problem):  # l is the depth limit for the Depth Limited Search 
 
             # ---------------- NUOVI NODI NELLA FRINGE ----------------
             for node in new_fringe_nodes:
-                Fringe.add(node)            # aggiunge, uno alla volta, tutti i nodi restituiti dall'expand dell'ultimo nodo
+                Fringe.add(node, problem)            # aggiunge, uno alla volta, tutti i nodi restituiti dall'expand dell'ultimo nodo
 
 
 def Print_Path(node, time_start, problem):
@@ -128,22 +138,7 @@ def Print_Path(node, time_start, problem):
         print("Failed to find a valid solution!")
         return 0
 
-    while 1:
-        list.insert(0,temp)         # salvo in una lista i nodi del percorso: li inserisco all'indice 0 in modo da ottenere un ordine dal nodo iniziale a quello finale
-        if temp.parent == None:         # riconosco il nodo root dall'essere l'unico senza un padre
-            flag = 1
-        else:
-            temp = temp.parent          # passo al nodo padre per la prossima iterazione
-        if flag :
-            print('--- Path Finder ---'
-                '\nI found a valid solution!'
-                  '\nTime occured = ' , (timeit.default_timer() - time_start),
-                  '\nPath Cost ='   , node.path_cost,
-                  '\nTree Depth ='  , node.depth,
-                  '\nNumber of nodes created =', problem.created_nodes)
+    print('--- Path Finder ---')
+    print('DEPTH: ', node.depth)
 
-            for index, x in enumerate(list):
-                if index != 0:
-                    print('\t↓\n', x.action,'\n\t↓')
-                PS.print_matrix(x.state.matrix,3,3)
-            return 0
+    return 0

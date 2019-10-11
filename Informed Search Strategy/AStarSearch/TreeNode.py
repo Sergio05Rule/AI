@@ -17,7 +17,7 @@ class Node:
         self.state = problem.initial_state
         self.depth = 0
         self.path_cost = 0
-        self.heuristic = problem.heuristic_func(self.state)
+        self.heuristic = None
 
     def create(self, problem, state, parent, depth, path_cost, action): # assegna i valori passati gli attributi di un nodo
         self.state = state
@@ -25,7 +25,7 @@ class Node:
         self.depth = depth + 1
         self.path_cost = path_cost
         self.action = action
-        self.heuristic = problem.heuristic_func(state) + path_cost
+        self.heuristic = None
 
 
 
@@ -47,7 +47,6 @@ def Expand(problem, node): # restitusice una serie di nodi da inserire nella FL
 
 
 def Tree_Search(problem):  # l is the depth limit for the Depth Limited Search Algorithm
-
     problem.fringe = FL.Fringe_list()
     Fringe = problem.fringe
 
@@ -91,7 +90,7 @@ def Graph_Search(problem):  # l is the depth limit for the Depth Limited Search 
     root.root(problem)      # inizializzazione root node
 
     # ---------------- AGGIUNTA ROOT ALLA FRINGE ----------------
-    Fringe.add(root)    # update fl w/ root_node
+    Fringe.add(root, problem)    # update fl w/ root_node
 
     while 1:
         # ---------------- CONTROLLO ASSENZA SOLUZIONE ----------------
@@ -117,7 +116,7 @@ def Graph_Search(problem):  # l is the depth limit for the Depth Limited Search 
 
             # ---------------- NUOVI NODI NELLA FRINGE ----------------
             for node in new_fringe_nodes:
-                Fringe.add(node)            # aggiunge, uno alla volta, tutti i nodi restituiti dall'expand dell'ultimo nodo
+                Fringe.add(node, problem)            # aggiunge, uno alla volta, tutti i nodi restituiti dall'expand dell'ultimo nodo
 
 
 def Print_Path(node, time_start, problem):

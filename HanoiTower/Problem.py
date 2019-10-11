@@ -1,16 +1,30 @@
 import Problem_State as PS
-import BF_Fringe as FL
+import BF_Fringe as BF
+import DF_Fringe as DF
+import UC_Fringe as UC
+import GR_Fringe as GR
+import AS_Fringe as AS
 
 # GRAPH PROBLEM
 
 
 class Problem:
-    def __init__(self):
+    def __init__(self, fringe_type):
 
         self.initial_state = PS.State([[1, 0, 0], [2, 0, 0], [3, 0, 0]])
         self.goal_state = PS.State([[0, 0, 1], [0, 0, 2], [0, 0, 3]])
         self.created_nodes = 0
-        self.fringe = FL.Fringe_list()
+        if (fringe_type == 'BF'):
+            self.fringe = BF.Fringe_list()
+        if (fringe_type == 'DF'):
+            self.fringe = DF.Fringe_list()
+        if (fringe_type == 'UC'):
+            self.fringe = UC.Fringe_list()
+        if (fringe_type == 'GR'):
+            self.fringe = GR.Fringe_list()
+        if (fringe_type == 'AS'):
+            self.fringe = AS.Fringe_list()
+
         self.closed = []
 
 
@@ -39,20 +53,22 @@ class Problem:
     def result(self, state, action):
         # dato uno stato ed una azione restituisce il nuovo stato dopo aver eseguito l'azione
 
-        new_state = PS.State(state.tower)
+        new_tower = PS.copy_matrix(state.tower, 3,3)
+        new_state = PS.State(new_tower)
 
         column1 = action[0]
         column2 = action[1]
+
 
         tops = PS.bricks_on_top(state.tower)
 
         brick = tops[column1][0]
         pos1 = tops[column1][1]
-
         pos2 = tops[column2][1]
 
+
         if (tops[column2][0] == 0):
-            pos2 = (0,column2)
+            pos2 = (3,column2)
 
         new_state.tower[pos2[0] - 1][pos2[1]] = brick
         new_state.tower[pos1[0]][pos1[1]] = 0
