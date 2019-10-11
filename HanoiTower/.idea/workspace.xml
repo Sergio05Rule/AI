@@ -2,20 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5b2dc768-fe2f-48bb-adf0-29c0b497f718" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../GraphComplete/Graph.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DF_Fringe.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DLS_Fringe.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GR_Fringe.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/UC_Fringe.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AS_Fringe.py" beforeDir="false" afterPath="$PROJECT_DIR$/AS_Fringe.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BF_Fringe.py" beforeDir="false" afterPath="$PROJECT_DIR$/BF_Fringe.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Main.py" beforeDir="false" afterPath="$PROJECT_DIR$/Main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Problem.py" beforeDir="false" afterPath="$PROJECT_DIR$/Problem.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Problem_State.py" beforeDir="false" afterPath="$PROJECT_DIR$/Problem_State.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TreeNode.py" beforeDir="false" afterPath="$PROJECT_DIR$/TreeNode.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Informed Search Strategy/AStarSearch/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Informed Search Strategy/AStarSearch/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Informed Search Strategy/AStarSearch/AS_Fringe.py" beforeDir="false" afterPath="$PROJECT_DIR$/../Informed Search Strategy/AStarSearch/AS_Fringe.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Informed Search Strategy/AStarSearch/TreeNode.py" beforeDir="false" afterPath="$PROJECT_DIR$/../Informed Search Strategy/AStarSearch/TreeNode.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GraphComplete/DLS_Fringe.py" beforeDir="false" afterPath="$PROJECT_DIR$/../GraphComplete/DLS_Fringe.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GraphComplete/Main.py" beforeDir="false" afterPath="$PROJECT_DIR$/../GraphComplete/Main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GraphComplete/Problem.py" beforeDir="false" afterPath="$PROJECT_DIR$/../GraphComplete/Problem.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GraphComplete/Problem_State.py" beforeDir="false" afterPath="$PROJECT_DIR$/../GraphComplete/Problem_State.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GraphComplete/TreeNode.py" beforeDir="false" afterPath="$PROJECT_DIR$/../GraphComplete/TreeNode.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Uniformed Search Strategy/DepthLimitedSearch/GraphClosed/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Uniformed Search Strategy/DepthLimitedSearch/GraphClosed/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />

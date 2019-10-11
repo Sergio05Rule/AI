@@ -1,13 +1,12 @@
 #DLS: Depth Limited Search
 
 class Fringe_list:
-    def __init__(self, l): # l è valore massimo di profondità per l'algoritmo
+    def __init__(self): # l è valore massimo di profondità per l'algoritmo
         self.list = []
-        self.limit = l
 
     def add(self, node, problem = None):
         # se il nodo ha profondità maggiore del valore limite non lo aggiungo alla fringe list
-        if node.depth <= self.limit:
+        if node.depth <= problem.limit:
             self.list.insert(0, node)
         return 0
 

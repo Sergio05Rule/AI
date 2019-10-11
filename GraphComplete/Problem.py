@@ -3,17 +3,20 @@ import sys
 import BF_Fringe as BF
 import DF_Fringe as DF
 import UC_Fringe as UC
+import DLS_Fringe as DLS
 import GR_Fringe as GR
 import AS_Fringe as AS
 
 # GRAPH PROBLEM
 class Problem:
-    def __init__(self, graph, initial_state, goal_state, fringe_type):
+    def __init__(self, graph, initial_state, goal_state, fringe_type, limit=None):
         self.graph = graph
         self.initial_state = initial_state
         self.goal_state = goal_state
         self.closed = []
         self.created_nodes = 0
+        self.fringe_type = fringe_type
+        self.limit = limit
 
         if (fringe_type == 'BF'):
             self.fringe = BF.Fringe_list()
@@ -21,6 +24,8 @@ class Problem:
             self.fringe = DF.Fringe_list()
         if (fringe_type == 'UC'):
             self.fringe = UC.Fringe_list()
+        if (fringe_type == 'DLS' or fringe_type == 'IDS'):
+            self.fringe = DLS.Fringe_list()
         if (fringe_type == 'GR'):
             self.fringe = GR.Fringe_list()
         if (fringe_type == 'AS'):

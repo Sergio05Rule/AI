@@ -56,7 +56,7 @@ def Tree_Search(problem):  # l is the depth limit for the Depth Limited Search A
     root.root(problem)      # inizializzazione root node
 
     # ---------------- AGGIUNTA ROOT ALLA FRINGE ----------------
-    Fringe.add(root)    # update fl w/ root_node
+    Fringe.add(root, problem)    # update fl w/ root_node
 
     while 1:
         # ---------------- CONTROLLO ASSENZA SOLUZIONE ----------------
@@ -76,12 +76,13 @@ def Tree_Search(problem):  # l is the depth limit for the Depth Limited Search A
 
             # ---------------- NUOVI NODI NELLA FRINGE ----------------
             for node in new_fringe_nodes:
-                Fringe.add(node)            # aggiunge, uno alla volta, tutti i nodi restituiti dall'expand dell'ultimo nodo
+                Fringe.add(node, problem)            # aggiunge, uno alla volta, tutti i nodi restituiti dall'expand dell'ultimo nodo
 
 
 def Graph_Search(problem):  # l is the depth limit for the Depth Limited Search Algorithm
 
     Fringe = problem.fringe
+    problem.closed = []
 
     # ---------------- NUOVO NODO CREATO ----------------
     root = Node()    # dichiarazione root_node
@@ -118,6 +119,38 @@ def Graph_Search(problem):  # l is the depth limit for the Depth Limited Search 
                     Fringe.add(node, problem)            # aggiunge, uno alla volta, tutti i nodi restituiti dall'expand dell'ultimo nodo
 
 
+def Iterative_Tree_Search(problem):
+
+    l = 0
+    solution = 1
+
+    while 1:
+        if solution == 1:
+            l += 1
+            problem.limit = l
+            solution = Tree_Search(problem)
+            if solution == 1:
+                print('FAILED TO FIND A SOLUTION AT DEPTH',l)
+        else:
+            return solution
+
+
+def Iterative_Graph_Search(problem):
+
+    l = 0
+    solution = 1
+
+    while 1:
+        if solution == 1:
+            l += 1
+            problem.limit = l
+            solution = Graph_Search(problem)
+            if solution == 1:
+                print('FAILED TO FIND A SOLUTION AT DEPTH',l)
+        else:
+            return solution
+
+
 def Print_Path(node, time_start, problem):
     list = []           # lista dove memorizzare il nome dei nodi da stampare a video
     temp = node         # node contiene informazioni utili sulla depth e path cost del GOAL node
@@ -136,7 +169,8 @@ def Print_Path(node, time_start, problem):
         else:
             temp = temp.parent          # passo al nodo padre per la prossima iterazione
         if flag :
-            print('--- Path Finder ---'
+            print('ALGORITM: ', problem.fringe_type,
+                '\n--- Path Finder ---',
                 '\nI found a valid solution!'
                   '\nTime occured =',timeit.default_timer() - time_start,
                   '\nPath Cost ='   , node.path_cost,

@@ -9,10 +9,11 @@ def NotinClosed(problem, node): #restituisce 1 se lo stato non è stato già vis
 
     for element in problem.closed:
 
-        #if node.state.id == tuple[0].id and node.depth >= tuple[1]:
-         #   NotVisited = 0 #presente nei visited ma selected_node ha maggiore/uguale depth
-
-        if node.state.id == element.state.id:
-            NotVisited = 0
+        if problem.fringe_type == 'DLS' or problem.fringe_type == 'IDS':
+            if node.state.id == element.state.id and node.depth >= element.depth:
+                NotVisited = 0
+        else:
+            if node.state.id == element.state.id:
+                NotVisited = 0
 
     return NotVisited

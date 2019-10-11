@@ -35,6 +35,16 @@ if __name__ == '__main__':
     solution = TN.Graph_Search(problem)
     TN.Print_Path(solution, start_time, problem)
 
+    problem = P.Problem(g, PS.State(start), PS.State(end), 'DLS', depth_limit)
+    solution = TN.Graph_Search(problem)
+    TN.Print_Path(solution, start_time, problem)
+
+    print('\n\n')
+
+    problem = P.Problem(g, PS.State(start), PS.State(end), 'IDS')
+    solution = TN.Iterative_Tree_Search(problem)
+    TN.Print_Path(solution, start_time, problem)
+
     problem = P.Problem(g, PS.State(start), PS.State(end), 'GR')
     solution = TN.Graph_Search(problem)
     TN.Print_Path(solution, start_time, problem)
