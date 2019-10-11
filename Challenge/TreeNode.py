@@ -33,7 +33,7 @@ def Expand(problem, node): # restitusice una serie di nodi da inserire nella FL
     actions = problem.action(node.state) # lista di azioni possibili
     tempFL = [] # lista temporanea dei nodi da aggiungere alla fringe list
 
-    print('STO ESPANDENDO LA POSIZIONE: ', node.state.pos)
+    #print('STO ESPANDENDO LA POSIZIONE: ', node.state.pos)
 
     for action in actions:
         temp = problem.result(node.state, action)
@@ -43,7 +43,7 @@ def Expand(problem, node): # restitusice una serie di nodi da inserire nella FL
         problem.created_nodes += 1
         tempN.create(problem, temp, node, node.depth, problem.path_cost(node,action), action) # assegna specifici valori alle variabili del nodo
         tempFL.append(tempN) # aggiunge il nodo alla lista dei nodi da inserire nella FL
-        print('MI POSSO SPOSTARE NEL NODO: ', tempN.state.pos)
+        #print('MI POSSO SPOSTARE NEL NODO: ', tempN.state.pos)
 
     return tempFL
 
@@ -66,7 +66,7 @@ def Tree_Search(problem):  # l is the depth limit for the Depth Limited Search A
             return 1            #il Tree Search è terminato e non è andato a buon fine
         else:
             selected_node = Fringe.pop()            # seleziona il prossimo nodo della fringe list
-            print('ANALIZZO POSIZIONE: ', selected_node.state.pos)
+            #print('ANALIZZO POSIZIONE: ', selected_node.state.pos)
             # ---------------- GOAL TEST CHECKING ----------------
             if problem.goal_test(selected_node.state):
                 return selected_node            # il Tree Search è terminato ed è andato a buon fine, viene restituito il nodo soluzione
@@ -120,41 +120,8 @@ def Graph_Search(problem):  # l is the depth limit for the Depth Limited Search 
                 for node in new_fringe_nodes:
                     Fringe.add(node, problem)            # aggiunge, uno alla volta, tutti i nodi restituiti dall'expand dell'ultimo nodo
 
-
-def Iterative_Tree_Search(problem):
-
-    l = 0
-    solution = 1
-
-    while 1:
-        if solution == 1:
-            l += 1
-            problem.limit = l
-            solution = Tree_Search(problem)
-            if solution == 1:
-                print('FAILED TO FIND A SOLUTION AT DEPTH',l)
-        else:
-            return solution
-
-
-def Iterative_Graph_Search(problem):
-
-    l = 0
-    solution = 1
-
-    while 1:
-        if solution == 1:
-            l += 1
-            problem.limit = l
-            solution = Graph_Search(problem)
-            if solution == 1:
-                print('FAILED TO FIND A SOLUTION AT DEPTH',l)
-        else:
-            return solution
-
-
 def Print_Path(node, time_start, problem):
-    list = []           # lista dove memorizzare il nome dei nodi da stampare a video
+    solution_path = []           # lista dove memorizzare il nome dei nodi da stampare a video
     temp = node         # node contiene informazioni utili sulla depth e path cost del GOAL node
     flag = 0            # flag per il controllo del ciclo: vale 1 se trovo il nodo root
     print('')
@@ -165,7 +132,7 @@ def Print_Path(node, time_start, problem):
         return 0
 
     while 1:
-        list.insert(0,temp)         # salvo in una lista i nodi del percorso: li inserisco all'indice 0 in modo da ottenere un ordine dal nodo iniziale a quello finale
+        solution_path.insert(0,temp.state.pos)         # salvo in una lista i nodi del percorso: li inserisco all'indice 0 in modo da ottenere un ordine dal nodo iniziale a quello finale
         if temp.parent == None:         # riconosco il nodo root dall'essere l'unico senza un padre
             flag = 1
         else:
@@ -179,8 +146,53 @@ def Print_Path(node, time_start, problem):
                   '\nTree Depth ='  , node.depth,
                   '\nGenerated Nodes =', problem.created_nodes)
 
-            for index, x in enumerate(list):
-                #if index != 0:
-                 #   print('\t↓\n', x.state.id,'\n\t↓')
-                print(x.state.pos)
+            print_solution(solution_path, problem)
+
+            for x in solution_path:
+
+                print(x, ' ')
+
+
+
             return 0
+
+
+def print_solution(solution_path, problem):
+    print_wall(problem)
+
+    for row in range(problem.M):
+
+        print('|', end='')
+
+        for col in range(problem.N):
+
+            if is_in( (row, col) , problem.V):
+                print('O|', end='')
+
+            elif is_in((row, col), solution_path):
+                if (row, col) == problem.initial_state.pos:
+                    print('I|', end='')
+                elif (row, col) == problem.goal_state.pos:
+                    print('G|', end='')
+                else:
+                    print('*|', end='')
+            else:
+                print(' |', end='')
+
+        print('\n')
+    print_wall(problem)
+
+
+def print_wall(problem):
+    for wall in range(problem.N*2):
+        print('-', end='')
+    print('')
+
+
+def is_in(pos, list):
+
+    for element in list:
+        if pos == element:
+            return 1
+
+    return 0

@@ -16,10 +16,6 @@ if __name__ == '__main__':
     I = (0,0)
     G = (4,4)
 
-
-
-
-
     problem = P.Problem(N, M, K, V, PS.State(I), PS.State(G), 'BF')
     solution = TN.Graph_Search(problem)
     TN.Print_Path(solution, start_time, problem)
@@ -28,7 +24,7 @@ if __name__ == '__main__':
     solution = TN.Graph_Search(problem)
     TN.Print_Path(solution, start_time, problem)
 
-    #problem = P.Problem(g, PS.State(start), PS.State(end), 'AS')
-    #solution = TN.Graph_Search(problem)
-    #TN.Print_Path(solution, start_time, problem)
+    problem = P.Problem(N, M, K, V, PS.State(I), PS.State(G), 'AS')
+    solution = TN.Graph_Search(problem)
+    TN.Print_Path(solution, start_time, problem)
 

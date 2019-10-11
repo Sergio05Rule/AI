@@ -90,8 +90,15 @@ class Problem:
 
     def heuristic_func(self, state):
 
-        return self.check_position_heu(state)
+        return self.manhattan_distance(state)
 
-    def check_position_heu(self, state):
 
-        return 0
+    def manhattan_distance(self, state):
+        distance = 0
+        a = state
+        b = self.goal_state
+
+        distance = distance + abs((b.x - a.x)) + abs((b.y - a.y))
+
+        #print ('manhattan_distance of state:', state.pos ,' is:' ,distance) #DEBUG
+        return distance
