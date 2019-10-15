@@ -4,14 +4,13 @@ Course Repository Polytechnic of Bari (Master degree in Computer Science)
 
 Artificial Intelligence Course Repository
 
+
 	->Uniformed Search Strategy
-															->DepthLimitedSearch
-																									->8Puzzle
-																									->8PuzzleClosed
-																									->GraphClosed
-															->IterativeDepthLimitedSearch
-																														->8Puzzle
-																														->8PuzzleClosed
+															
+															
+		->DepthLimitedSearch
+		->IterativeDepthLimitedSearch
+															
 	->Informed Search Strategy
 
 
