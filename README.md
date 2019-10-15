@@ -16,4 +16,3 @@ Artificial Intelligence and Machine Learning Course Repository
 
 
 
-TO DO:
