@@ -51,7 +51,7 @@ def revise(CSP, xi, xj): #returns true iff we revise the domain of Xi
     for index, x in enumerate(CSP.domains[xi]):
         for y in CSP.domains[xj]:
             #print('vicnolo', x, y)
-            if x == y: #vincolo soddisfatto
+            if x != y: #vincolo soddisfatto
                 flag = False
 
         if flag != False:
