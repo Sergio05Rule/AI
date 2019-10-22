@@ -1,6 +1,6 @@
 from CSP import Constraint, CSP
 from typing import Dict, List, Optional
-
+import ARC_3 as a
 
 class MapColoringConstraint(Constraint[str, str]):
     def __init__(self, place1: str, place2: str) -> None:
@@ -37,8 +37,12 @@ if __name__ == "__main__":
     csp.add_constraint(MapColoringConstraint("Victoria", "New South Wales"))
     csp.add_constraint(MapColoringConstraint("Victoria", "Tasmania"))
 
+    a.arc_3(csp)
+
     solution: Optional[Dict[str, str]] = csp.backtracking_search()
     if solution is None:
         print("No solution found!")
     else:
-        print(solution)
+        print('\nSoluzione:')
+        for x in solution:
+            print('Variabile:',x,'- valore del dominio:', solution[x])
