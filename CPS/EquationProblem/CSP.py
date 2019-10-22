@@ -14,8 +14,8 @@ class Constraint( t.Generic[V, D] ):
 class CSP( t.Generic[V, D] ):
     def __init__(self, variables: t.List[V], domains: t.Dict[V, t.List[D]]):
         self.variables: t.List[V] = variables  # variabili che devono essere vincolate
-        self.domains: t.Dict[V, t.List[D]] = domains  # dominii
-        self.constraints: t.Dict[V, t.List[Constraint[V, D]]] = {}
+        self.domains: t.Dict[V, t.List[D]] = domains  # dominii delle variabili
+        self.constraints: t.Dict[V, t.List[Constraint[V, D]]] = {} #vincoli sulle variabili
         for variable in self.variables:
             self.constraints[variable] = []
 
@@ -52,11 +52,10 @@ class CSP( t.Generic[V, D] ):
         for value in self.domains[first]:
             local_assignment = assignment.copy()
             local_assignment[first] = value
-            # if we're still consistent, we recurse (continue)
+            #se i vincoli sono consistenti proseguo nel backtracking ricorsivo
             if self.consistent(first, local_assignment):
                 result: t.Dict[V, D] = self.backtracking_search(local_assignment)
 
-                # if we didn't find the result, we will end up backtracking
-                if result is not None:
+                if result is not None: #se result = None termino backtracking_search
                     return result
         return None
