@@ -7,7 +7,7 @@ class Constraint( t.Generic[V, D] ):
     def __init__(self, variables: t.List[V]):
         self.variables = variables
 
-    #@abstractmethod
+    #abstractmethod
     def satisfied(self, assignment: t.Dict[V, D]):
         ...
 
@@ -34,7 +34,7 @@ def degree_heuristic(unassigned_vars, constraints): #next Xi
     if __debug__:
         print('DEBUG - degree_heuristic')
 
-    number_of_constraint = []
+    number_of_constraints = []
     for var in unassigned_vars:
         count = 0
 
@@ -42,20 +42,23 @@ def degree_heuristic(unassigned_vars, constraints): #next Xi
             print('\t', var, ' ha i seguenti vincoli:')
 
         for constraint in constraints[var]:
-            count += 1
+            for variable in constraint.variables:
+                if variable in unassigned_vars and variable != var: #conto i constraint sulle var non assegnate
+                    count += 1
+                    print('\tDEBUG - conto +1 constraint per ',var,'rispetto al vincolo su:' ,variable)
             if __debug__:
                 print('\t',constraint.variables)
-        number_of_constraint.append(count)
+        number_of_constraints.append(count)
 
         if __debug__:
             print('\t numero di vincoli per ',var,':' ,count,'\n')
 
     if __debug__:
-        print('\tnumero max di vincoli', max(number_of_constraint))
-        print('\tindex',number_of_constraint.index(max(number_of_constraint)))
-        print('\t', unassigned_vars[number_of_constraint.index(max(number_of_constraint))] )
+        print('\tnumero max di vincoli', max(number_of_constraints))
+        print('\tindex',number_of_constraints.index(max(number_of_constraints)))
+        print('\t',unassigned_vars[number_of_constraints.index(max(number_of_constraints))] )
 
-    return unassigned_vars[number_of_constraint.index(max(number_of_constraint))]
+    return unassigned_vars[number_of_constraints.index(max(number_of_constraints))]
 
 def last_costraining_value(var, constraints, domains, assignment): #selezione del prossimo elemento del dominio per la data Xi
     #Need 2 be COMPLETE #TODO
@@ -80,6 +83,8 @@ class CSP( t.Generic[V, D] ):
         for variable in constraint.variables:
             if variable in self.variables:
                 self.constraints[variable].append(constraint)
+            else:
+                print('Attenzione: ' ,variable,' non definita!')
 
     #controlla se l'assignment soddisfa tutti i constraint per la data variabile
     def consistent(self, variable: V, assignment: t.Dict[V, D]):

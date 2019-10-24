@@ -4,7 +4,6 @@ def arc_3(CSP):
 
     queue = load_queue(CSP) #a queue of arcs, initially all the arcs in csp
 
-    #test revise
     actual_arc = queue.pop()
     xi = actual_arc[0]
     xj = actual_arc[1]
@@ -50,8 +49,9 @@ def revise(CSP, xi, xj): #returns true iff we revise the domain of Xi
     #print('xi & xj',xi , xj)
     for index, x in enumerate(CSP.domains[xi]):
         for y in CSP.domains[xj]:
-            #print('vicnolo', x, y)
-            if x == y: #vincolo soddisfatto
+            print('vicnolo', x, y)
+            if revise_condition( x,y ): #vincolo soddisfatto
+                print('vincolo vero, flag = false')
                 flag = False
 
         if flag != False:
@@ -64,6 +64,12 @@ def revise(CSP, xi, xj): #returns true iff we revise the domain of Xi
     CSP.domains[xi] = test
 
     return revised
+
+def revise_condition(a,b):
+    if a == b:
+        return True
+    else:
+        return False
 
 
 

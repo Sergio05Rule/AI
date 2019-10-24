@@ -9,9 +9,6 @@ class Math_constraint(Constraint[str, str]):
         self.p2: str = p2
 
     def satisfied(self, assignment: Dict[str, str]):
-        #print('TEST\n',self.p1)
-        #print(assignment)
-        #print(assignment[self.p2]) #Tavolo 1
         #Se uno dei due non è assegnato allora return True
         if self.p1 not in assignment or self.p2 not in assignment:
             return True
@@ -34,8 +31,9 @@ if __name__ == "__main__":
     #ARC CONSISTENCY
     #a.arc_3(csp)
 
-    csp.tree_csp_solver()
-    '''
+    #csp.tree_csp_solver()
+
+
     # Print Soluzione
     solution: Dict[str, str] = csp.backtracking_search()
     if solution is None:
@@ -44,5 +42,3 @@ if __name__ == "__main__":
         print('\nSoluzione:')
         for x in solution:
             print ('Variabile:', x,'- valore del dominio:', solution[x])
-
-    '''
