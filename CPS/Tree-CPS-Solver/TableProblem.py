@@ -1,45 +1,55 @@
 from CSP import Constraint, CSP
 from typing import Dict, List, Optional
 import ARC_3 as a
-class Table_constraint(Constraint[str, str]):
-    def __init__(self, p1: str, p2: str, cnd):
+class Table_constraint_together(Constraint[str, str]):
+    def __init__(self, p1: str, p2: str):
         super().__init__([p1, p2])
         self.p1: str = p1
         self.p2: str = p2
-        self.cnd = cnd
 
-    def satisfied(self, assignment: Dict[str, str]):
+    def satisfied(self, assignment: Dict[str, str], variable):
         if self.p1 not in assignment or self.p2 not in assignment:
             return True
 
+        return assignment[self.p1][0] == assignment[self.p2][0]
 
+
+class Table_constraint_split(Constraint[str, str]):
+    def __init__(self, p1: str, p2: str):
+        super().__init__([p1, p2])
+        self.p1: str = p1
+        self.p2: str = p2
+
+    def satisfied(self, assignment: Dict[str, str], variable):
+        if self.p1 not in assignment or self.p2 not in assignment:
+            return True
+        '''
         for x in assignment:
             for y in assignment:
-                if x!=y and assignment[x] == assignment[y]:
-                   return False
+                if x != y and assignment[x] == assignment[y]:
+                    return False
+        '''
+        return assignment[self.p1][0] != assignment[self.p2][0]
 
+
+class Table_constraint_alldiff(Constraint[str, str]):
+    def __init__(self, p1: str):
+        super().__init__([p1])
+        self.p1: List[str] = p1
+
+    def satisfied(self, assignment: Dict[str, str], variable):
         '''
-        count_t1=0
-        count_t2=0
-        count_t3=0
-        #check max sei persone per tavolo
+        for var in variables:
+            if var not in assignment:
+                return True
+        '''
+
         for x in assignment:
-            print(assignment[x])
-            if assignment[x] == 'Tavolo 1':
-                count_t1 += 1
-            elif assignment[x] == 'Tavolo 2':
-                count_t2 += 1
-            elif assignment[x] == 'Tavolo 3':
-                count_t3 += 1
-        
-        if count_t1>5 or count_t2>5 or count_t3 >5:
-            return False
-        '''
-        # check the table assigned to p1 is not the same as the table assigned to p2
-        if self.cnd == 0:
-            return assignment[self.p1][0] != assignment[self.p2][0]
-        if self.cnd == 1:
-            return assignment[self.p1][0] == assignment[self.p2][0]
+            if x != variable and assignment[x] == assignment[variable]:
+                return False
+        return True
+
+
 
 if __name__ == "__main__":
     variables: List[str] = ["Antonella", "Domenico", "Raffaella", "Tommaso","Vincenzo","Azzurra","Cristiano","Francesca","Luigi","Giovanni","Marcella","Daniela","Nunzio","Silvia","Leonardo"]
@@ -51,18 +61,25 @@ if __name__ == "__main__":
                              ("Tavolo 3",1),("Tavolo 3",2),("Tavolo 3",3),("Tavolo 3",4),("Tavolo 3",5),("Tavolo 3",6)]
 
     csp: CSP[str, str] = CSP(variables, domains)
-    csp.add_constraint( Table_constraint("Giovanni", "Marcella",0)) #condition = 1 insieme, 0 altrimenti
-    csp.add_constraint( Table_constraint("Marcella", "Daniela",0)) #condition = 1 insieme, 0 altrimenti
-    csp.add_constraint( Table_constraint("Luigi", "Leonardo",0)) #condition = 1 insieme, 0 altrimenti
+    #non insieme
+    csp.add_constraint( Table_constraint_split("Giovanni", "Marcella")) #condition = 1 insieme, 0 altrimenti
+    csp.add_constraint( Table_constraint_split("Marcella", "Daniela")) #condition = 1 insieme, 0 altrimenti
+    csp.add_constraint( Table_constraint_split("Luigi", "Leonardo")) #condition = 1 insieme, 0 altrimenti
 
-    csp.add_constraint( Table_constraint("Antonella", "Domenico",1)) #condition = 1 insieme, 0 altrimenti
-    csp.add_constraint( Table_constraint("Domenico", "Raffaella",1)) #condition = 1 insieme, 0 altrimenti
-    csp.add_constraint( Table_constraint("Raffaella", "Tommaso",1)) #condition = 1 insieme, 0 altrimenti
-    csp.add_constraint( Table_constraint("Tommaso", "Vincenzo",1)) #condition = 1 insieme, 0 altrimenti
+    #insieme
+    csp.add_constraint( Table_constraint_together("Antonella", "Domenico")) #condition = 1 insieme, 0 altrimenti
+    csp.add_constraint( Table_constraint_together("Domenico", "Raffaella")) #condition = 1 insieme, 0 altrimenti
+    csp.add_constraint( Table_constraint_together("Raffaella", "Tommaso")) #condition = 1 insieme, 0 altrimenti
+    csp.add_constraint( Table_constraint_together("Tommaso", "Vincenzo")) #condition = 1 insieme, 0 altrimenti
 
-    csp.add_constraint( Table_constraint("Azzurra", "Cristiano",1)) #condition = 1 insieme, 0 altrimenti
-    csp.add_constraint( Table_constraint("Cristiano", "Francesca",1)) #condition = 1 insieme, 0 altrimenti
-    csp.add_constraint( Table_constraint("Francesca", "Luigi",1)) #condition = 1 insieme, 0 altrimenti
+    csp.add_constraint( Table_constraint_together("Azzurra", "Cristiano")) #condition = 1 insieme, 0 altrimenti
+    csp.add_constraint( Table_constraint_together("Cristiano", "Francesca")) #condition = 1 insieme, 0 altrimenti
+    csp.add_constraint( Table_constraint_together("Francesca", "Luigi")) #condition = 1 insieme, 0 altrimenti
+
+    #Constraint valido per tutti: tutti in posti diversi dei tavoli
+    for person in variables:
+        csp.add_constraint( Table_constraint_alldiff(person)) #condition = 1 insieme, 0 altrimenti
+
 
     #csp.tree_csp_solver()
 
@@ -72,4 +89,3 @@ if __name__ == "__main__":
     else:
         print('\nSoluzione:')
         print(solution)
-

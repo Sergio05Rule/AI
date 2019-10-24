@@ -29,10 +29,11 @@ if __name__ == "__main__":
     csp.add_constraint( Math_constraint("x1",'x2'))
 
     #ARC CONSISTENCY
-    a.arc_3(csp)
+    #a.arc_3(csp)
 
-    #csp.tree_csp_solver()
+    csp.tree_csp_solver()
 
+    '''
     # Print Soluzione
     solution: Dict[str, str] = csp.backtracking_search()
     if solution is None:
@@ -41,3 +42,4 @@ if __name__ == "__main__":
         print('\nSoluzione:')
         for x in solution:
             print ('Variabile:', x,'- valore del dominio:', solution[x])
+    '''

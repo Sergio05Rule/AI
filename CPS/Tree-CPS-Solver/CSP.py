@@ -89,7 +89,7 @@ class CSP( t.Generic[V, D] ):
     #controlla se l'assignment soddisfa tutti i constraint per la data variabile
     def consistent(self, variable: V, assignment: t.Dict[V, D]):
         for constraint in self.constraints[variable]:
-            if not constraint.satisfied(assignment):
+            if not constraint.satisfied(assignment,variable):
                 return False
         return True
 
@@ -111,9 +111,9 @@ class CSP( t.Generic[V, D] ):
         # recupero la prossima variabile da valorizzare secondo una opportuna euristica
 
         '''Cambio Euristica'''
-        #next_var: V = unassigned[0] #euristica fifo
+        next_var: V = unassigned[0] #euristica fifo
         #next_var: V = minimum_remaining_values(unassigned, self.domains) #euristica minimum_remaining_values
-        next_var: V = degree_heuristic(unassigned, self.constraints) #euristica degree_heuristic
+        #next_var: V = degree_heuristic(unassigned, self.constraints) #euristica degree_heuristic
 
         for value in self.domains[next_var]:
             local_assignment = assignment.copy()
