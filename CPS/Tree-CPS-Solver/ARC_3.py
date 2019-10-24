@@ -4,10 +4,11 @@ def arc_3(CSP):
 
     queue = load_queue(CSP) #a queue of arcs, initially all the arcs in csp
 
-    actual_arc = queue.pop()
-    xi = actual_arc[0]
-    xj = actual_arc[1]
+    print('Test queue')
 
+    for element in queue:
+        print(element)
+    input('fine queue')
     while len(queue) != 0:
         actual_arc = queue.pop()
         xi = actual_arc[0]
@@ -24,6 +25,9 @@ def arc_3(CSP):
                         queue.append(aux)
     if __debug__:
         print('DEBUG - FINE ARC_3 Consistency')
+        for var in CSP.variables:
+            print('Var:', var, 'Domain:',CSP.domains[var
+            ])
 
     input('\npress any key to continue')
     return True
@@ -32,13 +36,26 @@ def arc_3(CSP):
 def load_queue(CSP):
 
     queue = []
-
     for var in CSP.variables:
+        print('next')
         for constraint in CSP.constraints[var]:
-            aux = constraint.variables[1],constraint.variables[0]
-            queue.append(constraint.variables)
-            queue.append(aux) #direzione inversa
+            #aux = constraint.variables[1],constraint.variables[0]
+            if constraint.variables not in queue:
+                queue.append(constraint.variables)
+                print('constraint.variables',constraint.variables)
 
+                aux = constraint.variables[1],constraint.variables[0]
+                queue.append(aux) #direzione inversa
+    '''
+    queue = []
+    for var in CSP.variables:
+        print('next')
+        for constraint in CSP.constraints[var]:
+            #aux = constraint.variables[1],constraint.variables[0]
+                queue.append(constraint.variables)
+                print('constraint.variables',constraint.variables)
+            #queue.append(aux) #direzione inversa
+    '''
     return queue
 
 def revise(CSP, xi, xj): #returns true iff we revise the domain of Xi
@@ -48,9 +65,11 @@ def revise(CSP, xi, xj): #returns true iff we revise the domain of Xi
     test = [] #lista temporanea usata per eliminare valori dal dominio (dic[var][domain])
     #print('xi & xj',xi , xj)
     for index, x in enumerate(CSP.domains[xi]):
+        print('per ogni x nel dominio:',x)
+        flag = True
         for y in CSP.domains[xj]:
             print('vicnolo', x, y)
-            if revise_condition( x,y ): #vincolo soddisfatto
+            if revise_condition( x,y ,xi,xj ): #vincolo soddisfatto
                 print('vincolo vero, flag = false')
                 flag = False
 
@@ -65,12 +84,14 @@ def revise(CSP, xi, xj): #returns true iff we revise the domain of Xi
 
     return revised
 
-def revise_condition(a,b):
-    if a == b:
-        return True
-    else:
-        return False
-
-
-
-
+def revise_condition(a,b , xi,xj):
+    if xi=='x1':
+        if a > b:
+            return True
+        else:
+            return False
+    if xi=='x2':
+        if a < b:
+            return True
+        else:
+            return False

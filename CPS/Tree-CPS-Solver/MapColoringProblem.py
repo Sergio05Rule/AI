@@ -37,7 +37,7 @@ if __name__ == "__main__":
     csp.add_constraint(MapColoringConstraint("Victoria", "New South Wales"))
     csp.add_constraint(MapColoringConstraint("Victoria", "Tasmania"))
 
-    #a.arc_3(csp)
+    a.arc_3(csp)
 
     solution: Optional[Dict[str, str]] = csp.backtracking_search()
     if solution is None:

@@ -13,7 +13,7 @@ class Math_constraint(Constraint[str, str]):
         if self.p1 not in assignment or self.p2 not in assignment:
             return True
 
-        return assignment[self.p1] == assignment[self.p2]
+        return assignment[self.p1] > assignment[self.p2]
 
 if __name__ == "__main__":
     var1 = 'x1'
@@ -29,7 +29,7 @@ if __name__ == "__main__":
     csp.add_constraint( Math_constraint("x1",'x2'))
 
     #ARC CONSISTENCY
-    #a.arc_3(csp)
+    a.arc_3(csp)
 
     #csp.tree_csp_solver()
 

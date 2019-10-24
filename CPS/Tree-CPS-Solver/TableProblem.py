@@ -1,6 +1,6 @@
 from CSP import Constraint, CSP
 from typing import Dict, List, Optional
-
+import ARC_3 as a
 class Table_constraint(Constraint[str, str]):
     def __init__(self, p1: str, p2: str, cnd):
         super().__init__([p1, p2])
@@ -56,7 +56,7 @@ if __name__ == "__main__":
     csp.add_constraint( Table_constraint("Francesca", "Luigi",1)) #condition = 1 insieme, 0 altrimenti
 
     #ARC CONSISTENCY
-    #a.arc_3(csp)
+    a.arc_3(csp)
 
     #csp.tree_csp_solver()
 
