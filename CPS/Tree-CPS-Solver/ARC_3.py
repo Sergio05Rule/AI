@@ -75,7 +75,6 @@ def revise(CSP, xi, xj, arc_dir): #returns true iff we revise the domain of Xi
 
 def revise_condition(a,b , xi,xj, arc_dir):
     '''Math Problem'''
-    '''
     if arc_dir == 0: #arco diretto
         if a < b:
             return True
@@ -86,15 +85,4 @@ def revise_condition(a,b , xi,xj, arc_dir):
             return True
         else:
             return False
-    '''
-    '''Table Problem'''
-    '''
-    #Non c'è bisogno di distinguere fra arc diretto o inverso essendo vincoli simmetrici
-    # check the table assigned to p1 is not the same as the table assigned to p2
-    print(a,b,xi,xj,arc_dir)
-    input()
-    if self.cnd == 0:
-        return x != y
-    if self.cnd == 1:
-        return x == y
-    '''
+

@@ -64,11 +64,8 @@ if __name__ == "__main__":
     csp.add_constraint( Table_constraint("Cristiano", "Francesca",1)) #condition = 1 insieme, 0 altrimenti
     csp.add_constraint( Table_constraint("Francesca", "Luigi",1)) #condition = 1 insieme, 0 altrimenti
 
-    #ARC CONSISTENCY
-    #a.arc_3(csp)
-    input()
-    csp.tree_csp_solver()
-    input()
+    #csp.tree_csp_solver()
+
     solution: Dict[str, str] = csp.backtracking_search()
     if solution is None:
         print("Nessuna soluzione trovata")
