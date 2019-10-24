@@ -1,5 +1,7 @@
 import typing as t
 import ARC_3 as a
+import operator #per riordinare dizionario
+
 V = t.TypeVar(str) #simulo variabile striga per le Xi
 D = t.TypeVar(str) #simulo variabile stringa per gli elementi del dominio
 
@@ -60,16 +62,35 @@ def degree_heuristic(unassigned_vars, constraints): #next Xi
 
     return unassigned_vars[number_of_constraints.index(max(number_of_constraints))]
 
-def last_costraining_value(var, constraints, domains, assignment): #selezione del prossimo elemento del dominio per la data Xi
-    #Need 2 be COMPLETE #TODO
+def last_costraining_value(var, domains,constraints, unassigned): #selezione del prossimo elemento del dominio per la data Xi
     if __debug__:
-        print('DEBUG - last_costraining_value')
-    print('\t',var)
+        print('DEBUG - last_costraining_value on the var: ', var)
+    domain_count: t.Dict[D, D] = {}
+    assignment: t.Dict[V, D] = {}
 
-    for constraint in constraints[var]:
-        print('\t',constraint.variables)
-    print('\tdomains ',domains)
-    print('\tassignment ',assignment)
+    for value in domains[var]: #Per ogni valore della next_var
+        count = 0
+        for constraint in constraints[var]:
+            for neighbour in constraint.variables:
+                if neighbour != var: #and neighbour in unassigned:
+                    for n_value in domains[neighbour]:
+                        assignment: t.Dict[V, D] = {}
+                        assignment[var] = value
+                        assignment[neighbour] = n_value
+                        #verifica vincoli
+                        for constraint in constraints[var]:
+                            if not constraint.satisfied(assignment, var):
+                                count += 1
+                        domain_count[value] = count
+
+    if len(assignment) != 0:
+        sorted_domain_count= sorted(domain_count.items(), key=operator.itemgetter(1))
+        result = []
+        for x in sorted_domain_count:
+            result.append(x[0])
+        return result
+
+    return domains
 
 class CSP( t.Generic[V, D] ):
     def __init__(self, variables: t.List[V], domains: t.Dict[V, t.List[D]]):
@@ -114,6 +135,8 @@ class CSP( t.Generic[V, D] ):
         next_var: V = unassigned[0] #euristica fifo
         #next_var: V = minimum_remaining_values(unassigned, self.domains) #euristica minimum_remaining_values
         #next_var: V = degree_heuristic(unassigned, self.constraints) #euristica degree_heuristic
+
+        #self.domains[next_var] = last_costraining_value(next_var,self.domains, self.constraints,unassigned)
 
         for value in self.domains[next_var]:
             local_assignment = assignment.copy()

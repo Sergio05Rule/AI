@@ -8,12 +8,12 @@ class Math_constraint(Constraint[str, str]):
         self.p1: str = p1
         self.p2: str = p2
 
-    def satisfied(self, assignment: Dict[str, str]):
+    def satisfied(self, assignment: Dict[str, str] ,variable):
         #Se uno dei due non è assegnato allora return True
         if self.p1 not in assignment or self.p2 not in assignment:
             return True
 
-        return assignment[self.p1] < assignment[self.p2]
+        return assignment[self.p1] > assignment[self.p2]
 
 if __name__ == "__main__":
     var1 = 'x1'
@@ -23,7 +23,7 @@ if __name__ == "__main__":
     domains: Dict[str, List[str]] = {}
 
     domains['x1'] = [i for i in range (100,200)]
-    domains['x2'] = [1,2,3,4,5,6,7,8,199,200,300,400]
+    domains['x2'] = [199,200,300,400,1,2,3,4,5,6,7,8]
 
     csp: CSP[str, str] = CSP(variables, domains)
     csp.add_constraint( Math_constraint("x1",'x2'))
@@ -31,9 +31,9 @@ if __name__ == "__main__":
     #ARC CONSISTENCY
     #a.arc_3(csp)
 
-    csp.tree_csp_solver()
+    #csp.tree_csp_solver()
 
-    '''
+
     # Print Soluzione
     solution: Dict[str, str] = csp.backtracking_search()
     if solution is None:
@@ -42,4 +42,4 @@ if __name__ == "__main__":
         print('\nSoluzione:')
         for x in solution:
             print ('Variabile:', x,'- valore del dominio:', solution[x])
-    '''
+
