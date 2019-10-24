@@ -3,26 +3,25 @@ def arc_3(CSP):
         print('DEBUG - ARC_3 Consistency')
 
     queue = load_queue(CSP) #a queue of arcs, initially all the arcs in csp
-
-    print('Test queue')
-
     for element in queue:
         print(element)
-    input('fine queue')
+
     while len(queue) != 0:
         actual_arc = queue.pop()
-        xi = actual_arc[0]
-        xj = actual_arc[1]
-        if revise(CSP, xi, xj ) == True:
+        xi = actual_arc[0][0]
+        xj = actual_arc[0][1]
+        arc_dir = actual_arc[1]
+        if revise(CSP, xi, xj, arc_dir ) == True:
             if len(CSP.domains[xi]) == 0:
                 return False
 
             for var in CSP.variables:
                 for constraint in CSP.constraints[var]:
                     if constraint.variables[1] == xi:
-                        queue.append(constraint.variables)
+                        queue.append( (constraint.variables,0))
                         aux = constraint.variables[1], constraint.variables[0] #direzione inversa
-                        queue.append(aux)
+                        queue.append((aux,1))
+                        print('\t\t ho reflush:',constraint.variables ,' e ', aux)
     if __debug__:
         print('DEBUG - FINE ARC_3 Consistency')
         for var in CSP.variables:
@@ -40,25 +39,15 @@ def load_queue(CSP):
         print('next')
         for constraint in CSP.constraints[var]:
             #aux = constraint.variables[1],constraint.variables[0]
-            if constraint.variables not in queue:
-                queue.append(constraint.variables)
+            if (constraint.variables,0) not in queue:
+                queue.append((constraint.variables,0))
                 print('constraint.variables',constraint.variables)
-
                 aux = constraint.variables[1],constraint.variables[0]
-                queue.append(aux) #direzione inversa
-    '''
-    queue = []
-    for var in CSP.variables:
-        print('next')
-        for constraint in CSP.constraints[var]:
-            #aux = constraint.variables[1],constraint.variables[0]
-                queue.append(constraint.variables)
-                print('constraint.variables',constraint.variables)
-            #queue.append(aux) #direzione inversa
-    '''
+                queue.append( (aux,1)) #direzione inversa
+
     return queue
 
-def revise(CSP, xi, xj): #returns true iff we revise the domain of Xi
+def revise(CSP, xi, xj, arc_dir): #returns true iff we revise the domain of Xi
     revised = False
     flag = True
 
@@ -69,7 +58,7 @@ def revise(CSP, xi, xj): #returns true iff we revise the domain of Xi
         flag = True
         for y in CSP.domains[xj]:
             print('vicnolo', x, y)
-            if revise_condition( x,y ,xi,xj ): #vincolo soddisfatto
+            if revise_condition( x,y ,xi,xj, arc_dir ): #vincolo soddisfatto
                 print('vincolo vero, flag = false')
                 flag = False
 
@@ -84,14 +73,28 @@ def revise(CSP, xi, xj): #returns true iff we revise the domain of Xi
 
     return revised
 
-def revise_condition(a,b , xi,xj):
-    if xi=='x1':
-        if a > b:
-            return True
-        else:
-            return False
-    if xi=='x2':
+def revise_condition(a,b , xi,xj, arc_dir):
+    '''Math Problem'''
+    '''
+    if arc_dir == 0: #arco diretto
         if a < b:
             return True
         else:
             return False
+    else:
+        if a > b:
+            return True
+        else:
+            return False
+    '''
+    '''Table Problem'''
+    '''
+    #Non c'è bisogno di distinguere fra arc diretto o inverso essendo vincoli simmetrici
+    # check the table assigned to p1 is not the same as the table assigned to p2
+    print(a,b,xi,xj,arc_dir)
+    input()
+    if self.cnd == 0:
+        return x != y
+    if self.cnd == 1:
+        return x == y
+    '''

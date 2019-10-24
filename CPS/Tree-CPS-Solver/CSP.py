@@ -153,6 +153,6 @@ class CSP( t.Generic[V, D] ):
 
 
 def make_arc_consistent(csp,xi,xj):
-        flag1 = a.revise(csp,xi,xj)
-        flag2 = a.revise(csp,xj,xi)
+        flag1 = a.revise(csp,xi,xj,0)
+        flag2 = a.revise(csp,xj,xi,1)
         return True
