@@ -92,6 +92,44 @@ def last_costraining_value(var, domains,constraints, unassigned): #selezione del
 
     return domains
 
+def foward_checking(csp, assignment, next_var, unassigned, new_domains):
+    if not csp.consistent(next_var,assignment):
+        print('\t\t\tRETURN PERCHE NON CONSISTENT')
+
+        return False
+
+    print('\tDEBUG - Foward Checking di ',next_var)
+    removed_values = {}
+    new_assignment = assignment.copy()
+    for constraint in csp.constraints[next_var]: #tutti i constraint della next var
+        for neighbour in constraint.variables:  #tutti i vicini dei constraint
+            to_remove = []
+            to_remove.clear()
+            if neighbour != next_var and neighbour in unassigned:
+                print(next_var, neighbour)
+                for value in new_domains[neighbour]:
+                    #print('\t\tnew_assignment ',new_assignment,'neighbour ',neighbour)
+                    new_assignment[neighbour] = value
+                    #verifica vincoli
+                    if not constraint.satisfied(new_assignment, next_var):
+                        #print('\tDEBUG - RIMOSSO dal dominio della var: ', neighbour,'il valore:', value)
+                        to_remove.append(value)
+                if len(to_remove)==len(csp.domains[neighbour]):
+                    print('\t\t\tRETURN PER len(to_remove)==len(csp.domains[neighbour])')
+
+                    return False
+                removed_values[neighbour] = to_remove
+
+    print('\tDEBUG - Foward Checking END')
+
+    for v in csp.variables:
+        if len(new_domains[v])==0:
+            print('\t\t\tRETURN PER DOMINIO V U O T O')
+            return False
+    return removed_values
+
+
+
 class CSP( t.Generic[V, D] ):
     def __init__(self, variables: t.List[V], domains: t.Dict[V, t.List[D]]):
         self.variables: t.List[V] = variables  # variabili che devono essere vincolate
@@ -114,7 +152,11 @@ class CSP( t.Generic[V, D] ):
                 return False
         return True
 
-    def backtracking_search(self, assignment: t.Dict[V, D] = {}):
+    def backtracking_search(self, assignment: t.Dict[V, D] = {}, local_domains = None):
+
+        if local_domains == None:
+            local_domains = self.domains.copy()
+
         # Se vero tutte le variabili sono state assegnate a valori del Dominio
         if len(assignment) == len(self.variables):
             return assignment
@@ -132,28 +174,58 @@ class CSP( t.Generic[V, D] ):
         # recupero la prossima variabile da valorizzare secondo una opportuna euristica
 
         '''Cambio Euristica'''
-        next_var: V = unassigned[0] #euristica fifo
+        #next_var: V = unassigned[0] #euristica fifo
         #next_var: V = minimum_remaining_values(unassigned, self.domains) #euristica minimum_remaining_values
-        #next_var: V = degree_heuristic(unassigned, self.constraints) #euristica degree_heuristic
+        next_var: V = degree_heuristic(unassigned, self.constraints) #euristica degree_heuristic
 
         #self.domains[next_var] = last_costraining_value(next_var,self.domains, self.constraints,unassigned)
 
-        for value in self.domains[next_var]:
+        print('CHOOSING A VALUE FOR ',next_var)
+        removed = {}
+
+        for value in local_domains[next_var]:
+
+            new_domains = local_domains.copy()
+
+
+            if removed == False:
+                removed = {}
+            for var in removed:
+                for removed_value in removed[var]:
+                    local_domains[var].append(removed_value)
+
+            #for x in local_domains:
+            #    print('LOCAL DOMAINS OF',x,': ', local_domains[x])
+
+            #print('VALUE OF', next_var, ' = ', value)
+
             local_assignment = assignment.copy()
             local_assignment[next_var] = value #prendo il primo valore disponibile
 
             if __debug__:
                 print('DEBUG - assigament', assignment, 'assignment[next_var] ', local_assignment[next_var])
                 print('DEBUG - next var: ',next_var, ' local assignment:', local_assignment)
+
             #se i vincoli sono consistenti proseguo nel backtracking ricorsivo
-            if self.consistent(next_var, local_assignment):
-                result: t.Dict[V, D] = self.backtracking_search(local_assignment)
+            #if self.consistent(next_var, local_assignment):
+
+            removed = foward_checking(self, local_assignment, next_var, unassigned, local_domains)
+            if removed != False:
+                #print(removed)
+
+                for var in removed:
+                    for removed_value in removed[var]:
+                        local_domains[var].remove(removed_value)
+
+                result: t.Dict[V, D] = self.backtracking_search(local_assignment, local_domains)
+
 
                 if result is not None: #se result = None termino backtracking_search
                     return result
         return None
 
     def tree_csp_solver(self, assignment: t.Dict[V, D] = {}):
+        print('DEBUG - tree_csp_solver')
         n = len(self.variables) #numero di variabili del csp
         root = self.variables[0] #prima variabile del problema come root node
 
@@ -161,9 +233,9 @@ class CSP( t.Generic[V, D] ):
 
         for j in range(n, 2-1, -1): #per j che va da n a 2
 
-            print(j)
+            print('\tDEBUG - J:',j)
             #return = MAKE-ARK CONSISTENT ( PARENT(Xj),xj) (self.variables[j+1],self.variables[j])
-            returned = make_arc_consistent(self,self.variables[j-1],self.variables[j-2])
+            returned = make_arc_consistent(self, self.variables[j-1], self.variables[j-2])
 
         for var in self.variables:
             try:
@@ -176,6 +248,6 @@ class CSP( t.Generic[V, D] ):
 
 
 def make_arc_consistent(csp,xi,xj):
-        flag1 = a.revise(csp,xi,xj,0)
-        flag2 = a.revise(csp,xj,xi,1)
+        flag1 = a.revise(csp,xi,xj)
+        flag2 = a.revise(csp,xj,xi)
         return True
