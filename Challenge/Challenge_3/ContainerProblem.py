@@ -27,7 +27,7 @@ class items_constraint_split(Constraint):
 class item_constraint_alldiff(Constraint):
     def __init__(self, p1: str):
         super().__init__([p1])
-        self.p1: List[str] = p1
+        self.p1  = p1
 
     def satisfied(self, assignment, variable):
         for x in assignment:
@@ -98,6 +98,6 @@ if __name__ == "__main__":
     else:
         print('\nSoluzione:')
         for var in solution:
-            print(var, '\t:', solution[var])
+            print('\t',var, '\t:', solution[var])
         time = end_time - start_time
-        print('Tempo impiegato = ', time)
+        print('\nTempo impiegato = ', time)
