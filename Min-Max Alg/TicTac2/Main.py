@@ -7,7 +7,7 @@ if __name__ == '__main__':
 
     g = G.Game(FirstMove, min_max_depth) #inizializzo gioco
 
-    Human = True
+    Human = False
     g.min_max_alfa_beta(Human)
 
 
